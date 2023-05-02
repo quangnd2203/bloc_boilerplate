@@ -1,0 +1,14 @@
+<svg id="search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="search-2" data-name="search" transform="translate(-266 -184)">
+    <g id="sp_btn_addition" transform="translate(91)">
+      <rect id="Rectangle_1266" data-name="Rectangle 1266" width="40" height="40" rx="4" transform="translate(175 184)" fill="#8898a5"/>
+    </g>
+    <g id="icon_search" transform="translate(-518 -48)">
+      <rect id="bg" width="24" height="24" transform="translate(792 240)" fill="#fff" opacity="0"/>
+      <g id="search-3" data-name="search" transform="translate(759.495 206.495)">
+        <ellipse id="layer1" cx="8.021" cy="8.232" rx="8.021" ry="8.232" transform="translate(35.505 35.505)" fill="none" stroke="#f5f5f5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+        <path id="layer1-2" data-name="layer1" d="M708.319,708.319l5.307,5.946" transform="translate(-659.122 -658.761)" fill="none" stroke="#f5f5f5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

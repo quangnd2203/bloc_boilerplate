@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="open" transform="translate(-53 -255)">
+    <rect id="bg" width="48" height="48" rx="4" transform="translate(53 255)" fill="#f0f4f7"/>
+    <text id="解錠" transform="translate(65 296)" fill="#036fc2" font-size="12" font-family="NotoSansCJKjp-Regular, Noto Sans CJK JP"><tspan x="0" y="0">解錠</tspan></text>
+    <g id="icon_open" transform="translate(65 258)">
+      <rect id="bg-2" data-name="bg" width="24" height="24" fill="#fff" opacity="0"/>
+      <g id="Group_4294" data-name="Group 4294" transform="translate(3.689 0.472)">
+        <path id="layer2" d="M.17,7.108,0,3.21C-.078,1.344,1.723-.091,4.025,0S8.257,1.69,8.337,3.556l.222,2.018" transform="translate(0 4.786) rotate(-34)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="layer1" d="M2,0H13.562a2,2,0,0,1,2,2V8.822a4,4,0,0,1-4,4H4a4,4,0,0,1-4-4V2A2,2,0,0,1,2,0Z" transform="translate(1.174 8.158)" fill="#036fc2"/>
+        <circle id="object" cx="1.945" cy="1.945" r="1.945" transform="translate(6.792 11.557)" fill="#e6eef5"/>
+      </g>
+    </g>
+  </g>
+</svg>

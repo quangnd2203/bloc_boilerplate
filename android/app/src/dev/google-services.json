@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "677174211807",
+    "project_id": "enaspiration-c8bc0",
+    "storage_bucket": "enaspiration-c8bc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677174211807:android:0debb76b781e69ed2f256a",
+        "android_client_info": {
+          "package_name": "com.quangnd.bloc.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677174211807-45qi4ois1dj9sgg6l5t929qjvum139d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quangnd.bloc.dev",
+            "certificate_hash": "c7c6371a0f493f9f70db9df27cea8bc90c9a599f"
+          }
+        },
+        {
+          "client_id": "677174211807-ui09qd26ljehsr2onkps8jnpkaiaj1jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc5BjZ90xWzeQwQZf8WV-rOYV_zNqvAhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677174211807-ui09qd26ljehsr2onkps8jnpkaiaj1jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

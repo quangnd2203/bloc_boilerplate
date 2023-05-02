@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000199">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: app_store_connect_api_key" time="0.001403">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: import_certificate" time="0.027344">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: get_provisioning_profile" time="1.180114">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: update_project_provisioning" time="0.030281">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: latest_testflight_build_number" time="1.874005">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: increment_build_number" time="0.386961">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: flutter build ipa --dart-define FLAVOR=staging" time="65.289465">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: build_app" time="23.018117">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: upload_symbols_to_crashlytics" time="56.861535">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: pilot" time="64.361734">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
