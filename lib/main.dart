@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api, avoid_print
+// ignore_for_file: library_private_types_in_public_api, avoid_print, always_specify_types, strict_raw_type
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +11,7 @@ import 'app/routes/app_pages.dart';
 import 'app/translations/app_translations.dart';
 import 'app/ui/widgets/widgets.dart';
 import 'app/utils/utils.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -85,10 +86,32 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         debugShowCheckedModeBanner: false,
         theme: ThemeSwitcher.of(context).themeData,
         title: APP_NAME.tr,
-        initialRoute: Routes.SPLASH,
+        home: Test(),
+        // initialRoute: Routes.SPLASH,
+        localeResolutionCallback: AppTranslation.localeResolutionCallback,
+        supportedLocales: AppTranslation.supportedLocales,
         locale: AppLocale.vi.value,
-        localizationsDelegates: ,
+        localizationsDelegates: const <LocalizationsDelegate>[
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          AppTranslation.delegate,
+        ],
       ),
     );
   }
 }
+
+class Test extends StatelessWidget {
+  const Test({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(AppTranslation.of(context)!.translate('splash_getting')),
+      ),
+    );
+  }
+}
+
