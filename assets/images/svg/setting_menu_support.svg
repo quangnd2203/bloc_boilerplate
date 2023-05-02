@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="icon_support" transform="translate(-1870 -752)">
+    <rect id="bg" width="32" height="32" transform="translate(1870 752)" fill="none" opacity="0"/>
+    <g id="Orion_question" transform="translate(1881.96 760.637)">
+      <path id="layer2" d="M22,15.293C22,14.033,23.165,12,26.472,12s3.976,2.462,3.976,3.293-.312,1.79-2.142,3.306-2.083,2.3-2.083,3.024V22.5" transform="translate(-22 -12)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <circle id="layer1" cx="1.267" cy="1.267" r="1.267" transform="translate(2.957 12.93)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <g id="object" transform="translate(1874 756)" fill="none" stroke="#036fc2" stroke-width="2">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11" fill="none"/>
+    </g>
+  </g>
+</svg>

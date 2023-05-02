@@ -1,0 +1,83 @@
+name: flutter_app
+description: Application with flutter.
+
+version: 0.1.0+5
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  cupertino_icons: ^1.0.5
+
+  # Notification
+#  flutter_local_notifications: ^12.0.0
+#  firebase_messaging: ^14.1.1
+
+  # Firebase
+  firebase_core: ^2.7.1
+#  firebase_analytics: ^9.3.5
+#  cloud_firestore: ^3.4.8
+#  firebase_storage: ^10.3.8
+#  firebase_auth: ^3.9.0
+  firebase_crashlytics: ^3.0.16
+
+  #Network
+  dio: ^5.0.1
+  connectivity_plus: ^3.0.3
+  logger: ^1.2.2
+
+  #Boilerplate
+#  get: ^4.6.5
+  get_storage: ^2.1.1
+  rxdart: ^0.27.7
+
+  #Other
+  flutter_svg: ^2.0.2
+  device_info_plus: ^8.1.0
+  cached_network_image: ^3.2.3
+  path_provider: ^2.0.13
+
+  intl: ^0.18.0
+  permission_handler: ^10.2.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.1
+
+#flutter_icons:
+#  image_path: "assets/icon.png"
+#  android: true
+#  ios: true
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/png/
+    - assets/images/jpg/
+    - assets/images/svg/
+
+  fonts:
+
+    - family: NotoSansJP
+      fonts:
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Black.otf
+          weight: 900
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Black.otf
+          weight: 800
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Bold.otf
+          weight: 700
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Medium.otf
+          weight: 600
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Medium.otf
+          weight: 500
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Regular.otf
+          weight: 400
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Light.otf
+          weight: 300
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Thin.otf
+          weight: 200
+        - asset: assets/fonts/noto-sans-jp/NotoSansJP-Thin.otf
+          weight: 100

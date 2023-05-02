@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="icon_menu" transform="translate(-4)">
+    <rect id="bg" width="32" height="32" transform="translate(4)" fill="#fff" opacity="0"/>
+    <g id="object" transform="translate(7 3)" fill="none" stroke="#73808a" stroke-width="2">
+      <circle cx="13" cy="13" r="13" stroke="none"/>
+      <circle cx="13" cy="13" r="12" fill="none"/>
+    </g>
+    <path id="line" d="M2283,8334.294h11.3" transform="translate(-2268.509 -8322.189)" fill="none" stroke="#73808a" stroke-linecap="round" stroke-width="2"/>
+    <path id="line-2" data-name="line" d="M2283,8334.294h11.3" transform="translate(-2268.509 -8318.154)" fill="none" stroke="#73808a" stroke-linecap="round" stroke-width="2"/>
+    <path id="line-3" data-name="line" d="M2283,8334.294h11.3" transform="translate(-2268.509 -8314.12)" fill="none" stroke="#73808a" stroke-linecap="round" stroke-width="2"/>
+  </g>
+</svg>
