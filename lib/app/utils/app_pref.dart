@@ -2,6 +2,8 @@
 import 'package:get_storage/get_storage.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../constants/app_values.dart';
+
 class AppPrefs {
   AppPrefs._();
 
@@ -23,6 +25,10 @@ class AppPrefs {
   static set accessToken(String? data) => _box.write('accessToken', data);
 
   static String? get accessToken => _box.read('accessToken');
+
+  static set appLanguage(AppLocale? data) => _box.write('appLanguage', data);
+
+  static AppLocale? get appLanguage => _box.read<AppLocale>('appLanguage');
 
   // static set userInfo(UserResponse? user) {
   //   _box.write('userInfo', user?.toJson());

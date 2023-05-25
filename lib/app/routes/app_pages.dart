@@ -1,4 +1,4 @@
-// ignore_for_file: always_specify_types, strict_raw_type
+// ignore_for_file: always_specify_types, strict_raw_type, prefer_const_constructors
 
 import 'package:get/get.dart';
 
@@ -12,7 +12,6 @@ class AppPages {
     GetPage(
       name: Routes.SPLASH,
       page: () => SplashScreen(),
-      binding: SplashBinding(),
     ),
     // GetPage(
     //   name: Routes.SETTING_NOTIFICATION_DETAIL,
