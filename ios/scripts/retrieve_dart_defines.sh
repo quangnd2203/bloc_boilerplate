@@ -10,7 +10,7 @@ function decode_url() { echo "${*}" | base64 --decode; }
 : > $OUTPUT_FILE
 
 IFS=',' read -r -a define_items <<<"$DART_DEFINES"
-
+oilerplate
 for index in "${!define_items[@]}"
 do
     # Flutter 2.2 以降で必要なデコードを実行する
@@ -21,8 +21,8 @@ do
         value=${item#*=}
         # FLAVORに対応したXCConfigファイルをincludeさせる
         echo "#include \"$value.xcconfig\"" >> $OUTPUT_FILE
-        echo "identifier=com.quangnd.bloc" >> $OUTPUT_FILE
+        echo "identifier=com.quangnd.getxboilerplate" >> $OUTPUT_FILE
         echo "PRODUCT_BUNDLE_IDENTIFIER=\$(identifier)\$(APP_ID_SUFFIX)" >> $OUTPUT_FILE
-        echo "APP_LINK=applinks:quangnd\$(APP_LINK_SUFFIX).page.link" >> $OUTPUT_FILE
+        echo "APP_LINK=applinks:getxboilerplate\$(APP_LINK_SUFFIX).page.link" >> $OUTPUT_FILE
     fi
 done

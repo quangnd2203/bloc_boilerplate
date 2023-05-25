@@ -1,4 +1,8 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../constants/constants.dart';
+import '../ui.dart';
 
 class SliverLoadMoreVertical<T> extends StatefulWidget {
   const SliverLoadMoreVertical.build({

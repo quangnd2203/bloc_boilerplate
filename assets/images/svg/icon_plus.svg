@@ -1,7 +1,0 @@
-<svg id="icon_plus" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <rect id="bg" width="16" height="16" fill="#fff" opacity="0"/>
-  <g id="plus" transform="translate(2.036 2.036)">
-    <path id="path" d="M14356.307-1443.311h11.928" transform="translate(-14356.307 1449.275)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-width="2"/>
-    <path id="path-2" data-name="path" d="M0,0H11.928" transform="translate(5.964) rotate(90)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-width="2"/>
-  </g>
-</svg>

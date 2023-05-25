@@ -4,10 +4,12 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../constants/app_enums.dart';
+import '../routes/app_pages.dart';
 import 'utils.dart';
 import 'package:flutter/material.dart';
 
@@ -108,6 +110,16 @@ class AppUtils {
     final Directory libCacheDir = Directory('${tempDir.path}/libCachedImageData');
     await libCacheDir.delete(recursive: true);
   }
+
+  // static void logout([bool isReset = true]) {
+    // AppPrefs.userInfo = null;
+    // AppPrefs.accessToken = null;
+    // AppPrefs.userRole = null;
+    // if (isReset) {
+    //   Get.deleteAll(force: true);
+    //   Get.offAllNamed(Routes.SPLASH);
+    // }
+  // }
 
   static Future<FileInfo?> getFileFromNetworkCache(String url) async {
     final FileInfo? fileInfo = await DefaultCacheManager().getFileFromCache(url);

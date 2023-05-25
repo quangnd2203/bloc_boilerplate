@@ -1,8 +1,8 @@
-app_identifier("com.quangnd.bloc") # The bundle identifier of your app
+app_identifier("com.quangnd.getxboilerplate") # The bundle identifier of your app
 # apple_id("quangnd.nta@gmail.com") # Your Apple Developer Portal username
 
-itc_team_id("") # App Store Connect Team ID
-team_id("") # Developer Portal Team ID
+itc_team_id("125740989") # App Store Connect Team ID
+team_id("AAAAAAAAAA") # Developer Portal Team ID
 
 # # For more information about the Appfile, see:
 # #     https://docs.fastlane.tools/advanced/#appfile

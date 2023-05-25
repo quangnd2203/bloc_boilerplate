@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="icon_history" transform="translate(111 -283)">
-    <rect id="bg" width="32" height="32" transform="translate(-111 283)" fill="#004071" opacity="0"/>
-    <path id="path" d="M1.149,18.778,3.59,22.228l3.271-2.947" transform="translate(-108.149 277.352)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="path-2" data-name="path" d="M8.05,11.418A10.528,10.528,0,0,1,18.683,1,10.527,10.527,0,0,1,29.316,11.418,10.527,10.527,0,0,1,18.683,21.837a10.694,10.694,0,0,1-8.379-4" transform="translate(-112.503 287.6)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
-    <path id="path-3" data-name="path" d="M33.5,10.447v5.088l3.983,3.334" transform="translate(-127.317 284.221)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-  </g>
-</svg>
