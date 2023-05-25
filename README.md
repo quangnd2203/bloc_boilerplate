@@ -1,23 +1,6 @@
-# GetX Boilerplate
-
-A new NTA Flutter project for smartlock.
-
-## Getting Started
-
-Metting:
-https://docs.google.com/document/d/1iLPBo1R7S6M34gKRTRJ1acfQUIMGzImhoXIVufZIRDU/edit
-
-WBS:
-https://docs.google.com/spreadsheets/d/1e7vzWOFdO4L-K6EWlz_FgeD0LbERHH1x1Dm517g15-4/edit#gid=613559661
-
-Q&A:
-https://docs.google.com/spreadsheets/d/11N_-3pxBmVi6KtBXV3bhhSY6NIRT55UNXmpUZkvkRFk/edit#gid=961056355
-
-Folder Project:
-https://drive.google.com/drive/u/1/folders/1iTUGQMk0Pz2m_6fsnQ-BhlcgYtogGV20
+# Bloc Boilerplate
 
 ## Environment:
-- Flutter: v3.7.9
 
 - FLAVOR: 
     - prod: production env 
