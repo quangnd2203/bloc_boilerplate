@@ -4,7 +4,7 @@ import '../extensions/extensions.dart';
 import '../utils/app_utils.dart';
 import 'constants.dart';
 
-ThemeData normalTheme(BuildContext context) {
+ThemeData normalTheme(){
   return ThemeData(
     fontFamily: AppTextStyles.fontFamilyNotoSansJP,
     brightness: AppUtils.valueByMode(values: <Brightness>[Brightness.light, Brightness.dark]),
@@ -18,3 +18,12 @@ ThemeData normalTheme(BuildContext context) {
     ),
   );
 }
+
+// ThemeData dark(){
+//   return ThemeData(
+//     fontFamily: AppTextStyles.fontFamilyNotoSansJP,
+//     brightness: Brightness.light,
+//     scaffoldBackgroundColor: AppColors.bgLight,
+//     textTheme:
+//   );
+// }
