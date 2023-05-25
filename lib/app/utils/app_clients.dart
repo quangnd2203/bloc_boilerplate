@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_dynamic_calls, always_specify_types, strict_raw_type
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
@@ -68,5 +69,18 @@ class AppClients extends DioForNative {
   void _errorInterceptor(DioError dioError, ErrorInterceptorHandler handler) {
     logger.e("${dioError.requestOptions.uri} - ${dioError.type} - Error ${dioError.message}\nData: ${dioError.response?.data ?? ''}");
     handler.next(dioError);
+  }
+
+  @override
+  Future<Response<T>> get<T>(String path,
+      {Map<String, dynamic>? queryParameters, dynamic data, Options? options, CancelToken? cancelToken, ProgressCallback? onReceiveProgress}) {
+    return request(
+      path,
+      data: data,
+      queryParameters: queryParameters,
+      options: DioMixin.checkOptions('GET', options),
+      onReceiveProgress: onReceiveProgress,
+      cancelToken: cancelToken,
+    );
   }
 }

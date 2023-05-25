@@ -1,3 +1,13 @@
+// ignore_for_file: avoid_classes_with_only_static_members
+
+import 'package:get/get.dart';
+
+
+enum ConnectionStatusDevice {
+  connected,
+  disconnect,
+}
+
 enum SizeUnit{
   B('B', 0),
   KB('KB', 1),

@@ -1,24 +1,23 @@
-// ignore_for_file: library_private_types_in_public_api, avoid_print, always_specify_types, strict_raw_type
+// ignore_for_file: library_private_types_in_public_api, avoid_print
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
+import 'package:toast/toast.dart';
 
 import 'app/constants/constants.dart';
 import 'app/resources/service/firebase_service.dart';
 import 'app/routes/app_pages.dart';
 import 'app/translations/app_translations.dart';
-import 'app/ui/widgets/widgets.dart';
+import 'app/ui/ui.dart';
 import 'app/utils/utils.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[]);
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp]);
   if (FLAVOR != 'dev') {
-    await FirebaseService().init();
+    // await FirebaseService().init();
   }
   await AppPrefs.initListener();
   // await notificationInitialed();
@@ -32,6 +31,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ToastContext().init(context);
     return ThemeSwitcherWidget(initialThemeData: normalTheme(context), child: const MyApp());
   }
 }
@@ -71,47 +71,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         overscroll.disallowIndicator();
         return true;
       },
-      // child: GetMaterialApp(
-      //   debugShowCheckedModeBanner: false,
-      //   theme: ThemeSwitcher.of(context).themeData,
-      //   title: APP_NAME,
-      //   initialRoute: Routes.SPLASH,
-      //   defaultTransition: Transition.cupertino,
-      //   getPages: AppPages.pages,
-      //   locale: AppLocale.vi.value,
-      //   translationsKeys: AppTranslation.translations,
-      //   // navigatorObservers: <NavigatorObserver>[MyApp.observer],
-      // ),
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeSwitcher.of(context).themeData,
-        title: APP_NAME.tr,
-        home: Test(),
-        // initialRoute: Routes.SPLASH,
-        localeResolutionCallback: AppTranslation.localeResolutionCallback,
-        supportedLocales: AppTranslation.supportedLocales,
-        locale: AppLocale.vi.value,
-        localizationsDelegates: const <LocalizationsDelegate>[
-          GlobalMaterialLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          AppTranslation.delegate,
-        ],
+        title: APP_NAME,
+        initialRoute: Routes.SPLASH,
+        defaultTransition: Transition.cupertino,
+        getPages: AppPages.pages,
+        locale: AppLocale.ja.value,
+        translationsKeys: AppTranslation.translations,
       ),
     );
   }
 }
-
-class Test extends StatelessWidget {
-  const Test({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(AppTranslation.of(context)!.translate('splash_getting')),
-      ),
-    );
-  }
-}
-

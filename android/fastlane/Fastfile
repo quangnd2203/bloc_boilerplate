@@ -4,18 +4,18 @@ platform :android do
 
     desc 'For develop build android staging'
     lane :staging do |options|
-#         yamlPath = '../pubspec.yaml';
-#         flutter_versioncode_bump(
-#             pubspec_location: yamlPath, # Changes the location of the pubspec.yaml
-#             version_code_increment: 1         # Changes the increment of the bump
-#         )
-#         sh('flutter build apk --dart-define FLAVOR=staging')
-#         firebase_app_distribution(
-#             app: '1:501675407018:android:ea7f8d48e2ef523d5f02d3',
-#             firebase_cli_token: '1//0gjez1pixL187CgYIARAAGBASNwF-L9IrhoEXkXdxIRnBsd2eZtpGEqh5yOU_qdNyXyuxfrbsVDTw5ztfe1IHH7yOsFINnPZ2hcQ',
-#             groups: 'tester',
-#             android_artifact_path: '../build/app/outputs/flutter-apk/app-release.apk'
-#         )
+        yamlPath = '../pubspec.yaml';
+        flutter_versioncode_bump(
+            pubspec_location: yamlPath, # Changes the location of the pubspec.yaml
+            version_code_increment: 1         # Changes the increment of the bump
+        )
+        sh('flutter build apk --dart-define FLAVOR=staging')
+        firebase_app_distribution(
+            app: '1:501675407018:android:ea7f8d48e2ef523d5f02d3',
+            firebase_cli_token: '1//0gjez1pixL187CgYIARAAGBASNwF-L9IrhoEXkXdxIRnBsd2eZtpGEqh5yOU_qdNyXyuxfrbsVDTw5ztfe1IHH7yOsFINnPZ2hcQ',
+            groups: 'tester',
+            android_artifact_path: '../build/app/outputs/flutter-apk/app-release.apk'
+        )
     end
 
 #     desc 'For develop build android develop'

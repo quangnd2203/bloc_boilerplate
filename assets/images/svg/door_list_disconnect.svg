@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="icon_ng" transform="translate(-1552 -529)">
-    <rect id="bg" width="16" height="16" transform="translate(1552 529)" fill="#fff" opacity="0"/>
-    <path id="path" d="M0,0H13.339" transform="translate(1555.344 532.345) rotate(45)" fill="none" stroke="#d03c39" stroke-linecap="round" stroke-width="3"/>
-    <path id="path-2" data-name="path" d="M0,0H13.338" transform="translate(1564.776 532.345) rotate(135)" fill="none" stroke="#d03c39" stroke-linecap="round" stroke-width="3"/>
-  </g>
-</svg>

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="icon_pencil" transform="translate(-18076 85)">
-    <rect id="Rectangle_1241" data-name="Rectangle 1241" width="16" height="16" transform="translate(18076 -85)" fill="#fff" opacity="0"/>
-    <g id="Orion_edit_1_" data-name="Orion_edit (1)" transform="translate(18077.35 -83.644)">
-      <path id="layer2" d="M48.555,6.5l.238-.238a2.09,2.09,0,0,0-.238-3.092,2.09,2.09,0,0,0-3.092-.238l-.238.238" transform="translate(-35.891 -2.352)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
-      <path id="layer1" d="M6.706,23.043l8.354-8.354-3.329-3.33L3.377,19.714,2.352,24.069l4.354-1.026ZM3.377,19.714l3.329,3.329" transform="translate(-2.352 -10.584)" fill="none" stroke="#036fc2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
-    </g>
-  </g>
-</svg>

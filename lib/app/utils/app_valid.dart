@@ -2,64 +2,43 @@ import 'package:get/get.dart';
 
 class AppValid {
   AppValid._();
-
-  static String? validationRequired(String? text, {bool hasServerError = false}) {
-    if (hasServerError) {
-      return 'message_no7_field_invalid'.tr;
-    }
-    if (text?.isEmpty ?? true) {
-      return 'message_no4_field_required'.tr;
-    }
-    return null;
+  
+  static Function(String) validateFullName() {
+    return (String? value) {
+      if (value?.isEmpty ?? true) {
+        return 'valid_full_name'.tr;
+      }
+      return null;
+    };
   }
 
-  static String? validateEmail(String? text, {bool hasServerError = false}) {
-    if (hasServerError) {
-      return 'message_no1_email_not_exist'.tr;
-    }
-    if (text?.isEmpty ?? true) {
-      return 'message_no4_field_required'.tr;
-    } else {
-      final RegExp regex = RegExp(r'^\S+@\S+\.\S+$');
-      if (!regex.hasMatch(text!))
-        return 'message_no2_email_invalid'.tr;
-      else
-        return null;
-    }
+  static Function(String) validateEmail() {
+    return (String? value) {
+      if (value?.isEmpty ?? true) {
+        return 'valid_enter_email'.tr;
+      } else {
+        final RegExp regex = RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
+        if (!regex.hasMatch(value!))
+          return 'valid_email'.tr;
+        else
+          return null;
+      }
+    };
   }
 
-  static String? validatePassword(String? text, {bool hasServerError = false}) {
-    final RegExp regex = RegExp(r'^[0-9a-zA-Z!@#\$&*~.]+$');
-    if (hasServerError) {
-      return 'message_no3_password_incorrect'.tr;
-    }
-    if (text?.isEmpty ?? true) {
-      return 'message_no4_field_required'.tr;
-    }
-    if (!regex.hasMatch(text!)) {
-      return 'message_no7_field_invalid'.tr;
-    }
-    if (text.length > 20) {
-      return '20${'please_enter_within_characters'.tr}';
-    }
-    return null;
-  }
-
-  static String? validateConfirmPassword(String? text, String? confirmText) {
-    final RegExp regex = RegExp(r'^[0-9a-zA-Z!@#\$&*~.]+$');
-    if (text?.isEmpty ?? true) {
-      return 'message_no4_field_required'.tr;
-    }
-    if (!regex.hasMatch(text!)) {
-      return 'message_no7_field_invalid'.tr;
-    }
-    if (text.length > 20) {
-      return '20${'please_enter_within_characters'.tr}';
-    }
-    if (!text.contains(confirmText ?? '')) {
-      return 'message_no3_password_incorrect'.tr;
-    }
-    return null;
+  static Function(String) validatePassword() {
+    return (String? value) {
+      if (value == null || value.length < 6) {
+        return 'valid_password'.tr;
+      } else {
+        final RegExp regex = RegExp(r'^[0-9a-zA-Z!@#\$&*~]{6,}$');
+        if (!regex.hasMatch(value))
+          return 'valid_password'.tr;
+        else
+          return null;
+      }
+    };
   }
 
   static Function(String) validatePhoneNumber() {

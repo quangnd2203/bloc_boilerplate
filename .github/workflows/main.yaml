@@ -1,0 +1,57 @@
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  release-android:
+    name: Build and release Android app
+    #if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "3.x"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.7.0'
+
+      - name: Update Flutter dependencies
+        run: flutter clean && flutter pub get
+
+      - name: Install Fastlane
+        run: cd android && bundle update --bundler && cd ..
+
+      - name: Execute Fastlane command
+        run: cd android && fastlane android staging
+
+  release-ios:
+    name: Build and distribute IOS app to TestFlight
+    env:
+      WATCHKEY_APP_SECRET: ${{secrets.WATCHKEY_APP_SECRET}}
+      CERTIFICATE_DISTRIBUTION: ${{secrets.CERTIFICATE_DISTRIBUTION}}
+      SIGNING_KEY_FILE_PATH: "/Users/runner/work/watchkey_app/watchkey_app/ios/signing-cert.p12"
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.7.0'
+
+      - name: Update Flutter dependencies
+        run: flutter clean && flutter pub get
+
+      - name: Decode signing certificate into a file
+        run: echo ${{env.CERTIFICATE_DISTRIBUTION}} | base64 --decode > ${{env.SIGNING_KEY_FILE_PATH}}
+
+      - name: Install Fastlane
+        run: cd ios && gem install cocoapods && pod install && cd ..
+
+      - name: Execute Fastlane command
+        run: cd ios && fastlane ios staging

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <g id="icon_ok" transform="translate(-1503 -451)">
-    <rect id="bg" width="16" height="16" transform="translate(1503 451)" fill="#fff" opacity="0"/>
-    <g id="object" transform="translate(1504 452)" fill="none" stroke="#80c565" stroke-width="3">
-      <circle cx="7" cy="7" r="7" stroke="none"/>
-      <circle cx="7" cy="7" r="5.5" fill="none"/>
-    </g>
-  </g>
-</svg>

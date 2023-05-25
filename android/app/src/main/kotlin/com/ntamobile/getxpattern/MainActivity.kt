@@ -1,4 +1,4 @@
-package com.quangnd.bloc
+package com.quangnd.getxboilerplate
 
 import io.flutter.embedding.android.FlutterActivity
 

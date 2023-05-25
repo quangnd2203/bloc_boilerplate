@@ -1,5 +1,4 @@
 // ignore_for_file: always_specify_types, strict_raw_type
-
 import 'package:get_storage/get_storage.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -35,6 +34,6 @@ class AppPrefs {
   //     return null;
   //   return UserResponse.fromJson(_box.read('userInfo'));
   // }
-  //
-  // static Stream get watchUser => _userBehavior.stream;
+
+  static Stream get watchUser => _userBehavior.stream;
 }

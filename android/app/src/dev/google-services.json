@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "677174211807",
-    "project_id": "enaspiration-c8bc0",
-    "storage_bucket": "enaspiration-c8bc0.appspot.com"
+    "project_id": "GetXboilerplate-c8bc0",
+    "storage_bucket": "GetXboilerplate-c8bc0.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:677174211807:android:0debb76b781e69ed2f256a",
         "android_client_info": {
-          "package_name": "com.quangnd.bloc.dev"
+          "package_name": "com.quangnd.getxboilerplate.dev"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "677174211807-45qi4ois1dj9sgg6l5t929qjvum139d4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.quangnd.bloc.dev",
+            "package_name": "com.quangnd.getxboilerplate.dev",
             "certificate_hash": "c7c6371a0f493f9f70db9df27cea8bc90c9a599f"
           }
         },

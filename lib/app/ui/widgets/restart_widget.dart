@@ -1,7 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-part of 'widgets.dart';
-
+import 'package:flutter/material.dart';
 
 class RestartWidget extends StatefulWidget {
   const RestartWidget({super.key, required this.child});

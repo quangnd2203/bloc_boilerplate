@@ -1,5 +1,9 @@
-part of 'widgets.dart';
+// ignore_for_file: no_logic_in_create_state
 
+import 'package:flutter/material.dart';
+
+import '../../constants/app_colors.dart';
+import '../ui.dart';
 
 typedef DataRequesterWrap<T> = Future<List<T>> Function(int offset);
 typedef InitRequesterWrap<T> = Future<List<T>> Function();

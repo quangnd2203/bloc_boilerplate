@@ -1,5 +1,4 @@
-part of 'widgets.dart';
-
+import 'package:flutter/material.dart';
 
 class LoadingFullScreen extends StatelessWidget {
 

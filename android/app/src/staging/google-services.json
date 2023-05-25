@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:501675407018:android:8e32b9240007b2555f02d3",
         "android_client_info": {
-          "package_name": "com.quangnd.bloc"
+          "package_name": "com.quangnd.getxboilerplate"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "501675407018-mhh4kvtpq2bkt7n4rg86q42191merqba.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.quangnd.bloc",
+            "package_name": "com.quangnd.getxboilerplate",
             "certificate_hash": "f231ef1f96425d919d5961c8f3ed7055de3c5b3c"
           }
         },
@@ -42,7 +42,7 @@
               "client_id": "501675407018-6qklj8k09obk9u8dd72ep7ngos30ak59.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.quangnd.bloc.staging",
+                "bundle_id": "com.quangnd.getxboilerplate.staging",
                 "app_store_id": "1231"
               }
             }
@@ -54,7 +54,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:501675407018:android:ea7f8d48e2ef523d5f02d3",
         "android_client_info": {
-          "package_name": "com.quangnd.bloc.staging"
+          "package_name": "com.quangnd.getxboilerplate.staging"
         }
       },
       "oauth_client": [
@@ -62,7 +62,7 @@
           "client_id": "501675407018-v5lorfmkiejeegt0200o0jmutbjjfhjc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.quangnd.bloc.staging",
+            "package_name": "com.quangnd.getxboilerplate.staging",
             "certificate_hash": "c7c6371a0f493f9f70db9df27cea8bc90c9a599f"
           }
         },
@@ -87,7 +87,7 @@
               "client_id": "501675407018-6qklj8k09obk9u8dd72ep7ngos30ak59.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.quangnd.bloc.staging",
+                "bundle_id": "com.quangnd.getxboilerplate.staging",
                 "app_store_id": "1231"
               }
             }

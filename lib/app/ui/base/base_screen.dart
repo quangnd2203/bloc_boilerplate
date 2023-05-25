@@ -1,10 +1,8 @@
 // ignore_for_file: flutter_style_todos
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import '../ui.dart';
-import '../widgets/widgets.dart';
 
 class BaseScreen<T extends BaseController> extends GetResponsiveView<T>{
   BaseScreen({super.key});
