@@ -1,4 +1,5 @@
 // ignore_for_file: always_specify_types, strict_raw_type
+import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -18,10 +19,6 @@ class AppPrefs {
     });
   }
 
-  static set appMode(String? data) => _box.write('appMode', data);
-
-  static String? get appMode => _box.read('appMode');
-
   static set accessToken(String? data) => _box.write('accessToken', data);
 
   static String? get accessToken => _box.read('accessToken');
@@ -29,6 +26,10 @@ class AppPrefs {
   static set appLanguage(AppLocale? data) => _box.write('appLanguage', data);
 
   static AppLocale? get appLanguage => _box.read<AppLocale>('appLanguage');
+
+  static set themeMode(ThemeMode? data) => _box.write('themeMode', data);
+
+  static ThemeMode? get themeMode => _box.read<ThemeMode>('themeMode');
 
   // static set userInfo(UserResponse? user) {
   //   _box.write('userInfo', user?.toJson());

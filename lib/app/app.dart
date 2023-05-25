@@ -66,10 +66,10 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
         ],
         child: bloc.BlocBuilder(
           bloc: getx.Get.find<ThemeCubit>(),
-          builder: (BuildContext context, ThemeData state){
+          builder: (BuildContext context, ThemeState state){
             return getx.GetMaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: state,
+              theme: state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme,
               title: APP_NAME,
               initialRoute: Routes.SPLASH,
               defaultTransition: getx.Transition.cupertino,

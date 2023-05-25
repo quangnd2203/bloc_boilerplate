@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 
-import '../extensions/extensions.dart';
-import '../utils/app_utils.dart';
-import 'constants.dart';
+ThemeData dark = ThemeData(
+  fontFamily: 'Roboto',
+  primaryColor: const Color(0xFF689da7),
+  brightness: Brightness.dark,
+  secondaryHeaderColor: const Color(0xFFaaa818),
+  textTheme: const TextTheme(
+    titleLarge: TextStyle(color: Color(0xFF8dbac3)),
+    titleSmall: TextStyle(color: Color(0xFF25282D)),
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: Colors.black),
+);
 
-ThemeData normalTheme(){
-  return ThemeData(
-    fontFamily: AppTextStyles.fontFamilyNotoSansJP,
-    brightness: AppUtils.valueByMode(values: <Brightness>[Brightness.light, Brightness.dark]),
-    scaffoldBackgroundColor: AppColors.bgLight,
-    hintColor: HexColor.fromHex('#8898A5'),
-    scrollbarTheme: ScrollbarThemeData(
-      thumbColor: MaterialStateProperty.all(AppColors.textGrey),
-      thumbVisibility: MaterialStateProperty.all(true),
-      radius: const Radius.circular(4),
-      crossAxisMargin: 2,
-    ),
-  );
-}
+ThemeData light = ThemeData(
+  brightness: Brightness.light,
+  fontFamily: 'Roboto',
+  primaryColor: const Color(0xFF003E47),
+  secondaryHeaderColor: const Color(0xFFCFEC7E),
+  highlightColor: const Color(0xFF003E47),
+  primaryColorDark: Colors.black,
+  textTheme: const TextTheme(
+    titleLarge: TextStyle(color: Color(0xFF003E47)),
+    titleSmall: TextStyle(color: Color(0xFF25282D)),
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: Colors.white,
+  ),
+);
 
-// ThemeData dark(){
-//   return ThemeData(
-//     fontFamily: AppTextStyles.fontFamilyNotoSansJP,
-//     brightness: Brightness.light,
-//     scaffoldBackgroundColor: AppColors.bgLight,
-//     textTheme:
-//   );
-// }

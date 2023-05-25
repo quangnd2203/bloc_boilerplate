@@ -5,7 +5,7 @@ import '../utils/app_utils.dart';
 class AppColors {
   AppColors._();
 
-  static Color get primary => AppUtils.valueByMode(values: <Color>[primaryLight, primaryLight]);
+  static Color get primary => HexColor.fromHex('#FF6915');
 
   static Color get primaryDark => HexColor.fromHex('#FF6915');
 

@@ -21,22 +21,18 @@ class SplashScreen extends StatelessWidget {
               height: 12,
             ),
             InkWell(
-              onTap: () => Get.find<ThemeCubit>().changeTheme(normalTheme().copyWith(scaffoldBackgroundColor: Colors.red)),
-              child: Text('red'),
+              onTap: () => Get.find<ThemeCubit>().changeThemeMode(ThemeMode.light),
+              child: Text('light'),
             ),
             const SizedBox(
               height: 12,
             ),
             InkWell(
-              onTap: () => Get.find<ThemeCubit>().changeTheme(normalTheme().copyWith(scaffoldBackgroundColor: Colors.white)),
-              child: Text('white'),
+              onTap: () => Get.find<ThemeCubit>().changeThemeMode(ThemeMode.dark),
+              child: Text('dark'),
             ),
             const SizedBox(
               height: 12,
-            ),
-            InkWell(
-              onTap: () => Get.find<ThemeCubit>().changeTheme(normalTheme().copyWith(scaffoldBackgroundColor: Colors.blue)),
-              child: Text('blue'),
             ),
           ],
         ),

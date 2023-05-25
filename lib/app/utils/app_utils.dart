@@ -20,23 +20,23 @@ class AppUtils {
   //   Toast.show(message, duration: duration);
   // }
 
-  static const List<String> _themes = <String>['dark', 'light'];
+  // static const List<String> _themes = <String>['dark', 'light'];
 
-  static T valueByMode<T>({List<String> themes = _themes, required List<T> values}) {
-    try {
-      for (int i = 0; i < themes.length; i++) {
-        if (AppPrefs.appMode == themes[i]) {
-          if (i < values.length)
-            return values[i];
-          else
-            values.first;
-        }
-      }
-      return values.first;
-    } catch (e) {
-      return values.first;
-    }
-  }
+  // static T valueByMode<T>({List<String> themes = _themes, required List<T> values}) {
+  //   try {
+  //     for (int i = 0; i < themes.length; i++) {
+  //       if (AppPrefs.appMode == themes[i]) {
+  //         if (i < values.length)
+  //           return values[i];
+  //         else
+  //           values.first;
+  //       }
+  //     }
+  //     return values.first;
+  //   } catch (e) {
+  //     return values.first;
+  //   }
+  // }
 
   static String pathMediaToUrl(String? url) {
     if (url == null || url.startsWith('http')) {
