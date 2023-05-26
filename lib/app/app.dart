@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart' as getx;
 import 'package:logger/logger.dart';
+import 'blocs/application/application_cubit.dart';
+import 'blocs/authentication/authentication_cubit.dart';
 import 'blocs/language/language_cubit.dart';
 import 'blocs/theme/theme_cubit.dart';
 import 'constants/constants.dart';
 import 'routes/app_pages.dart';
 import 'translations/app_translations.dart';
+import 'ui/ui.dart';
 import 'utils/utils.dart';
 
 class App extends StatefulWidget {
@@ -24,7 +27,9 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
   final Logger logger = Logger();
 
   void _initialBlocs() {
+    getx.Get.put(ApplicationCubit(), permanent: true);
     getx.Get.put(LanguageCubit(), permanent: true);
+    getx.Get.put(AuthenticationCubit(), permanent: true);
     getx.Get.put(ThemeCubit(), permanent: true);
   }
 
@@ -64,20 +69,22 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
             },
           ),
         ],
-        child: bloc.BlocBuilder(
-          bloc: getx.Get.find<ThemeCubit>(),
-          builder: (BuildContext context, ThemeState state){
-            return getx.GetMaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme,
-              title: APP_NAME,
-              initialRoute: Routes.SPLASH,
-              defaultTransition: getx.Transition.cupertino,
-              getPages: AppPages.pages,
-              locale: getx.Get.find<LanguageCubit>().state.value,
-              translationsKeys: AppTranslation.translations,
-            );
-          },
+        child: LoadingFullScreen(
+          child: bloc.BlocBuilder<ThemeCubit, ThemeState>(
+            bloc: getx.Get.find<ThemeCubit>(),
+            builder: (BuildContext context, ThemeState state) {
+              return getx.GetMaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme,
+                title: APP_NAME,
+                initialRoute: Routes.SPLASH,
+                defaultTransition: getx.Transition.cupertino,
+                getPages: AppPages.pages,
+                locale: getx.Get.find<LanguageCubit>().state.value,
+                translationsKeys: AppTranslation.translations,
+              );
+            },
+          ),
         ),
       ),
     );

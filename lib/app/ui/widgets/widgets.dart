@@ -9,4 +9,3 @@ export 'sliver_loadmore_vertical.dart';
 export 'theme_switcher.dart';
 export 'custom_outline_button.dart';
 export 'custom_appbar.dart';
-export 'package:flutter/widgets.dart';
