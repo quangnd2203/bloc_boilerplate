@@ -2,23 +2,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 import 'app/app.dart';
 import 'app/constants/constants.dart';
 import 'app/utils/utils.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[]);
+  initializeDateFormatting('en');
+  initializeDateFormatting('vi');
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[SystemUiOverlay.top]);
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Colors.transparent,
+    systemNavigationBarContrastEnforced: true,
+  ));
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp]);
-  if (FLAVOR != 'dev') {
-    // await FirebaseService().init();
-  }
+  flavor = (await const MethodChannel('flavor').invokeMethod<String>('getFlavor'))!;
   await AppPrefs.initListener();
-  // await notificationInitialed();
-  Logger().d('RUNNING IN $FLAVOR ENVIRONMENT'.toUpperCase());
-  // Logger().d('FCM TOKEN: ${await FirebaseCloudMessaging.getFCMToken()}');
+  Logger().d('RUNNING IN $flavor ENVIRONMENT'.toUpperCase());
   runApp(const App());
 }
-

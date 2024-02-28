@@ -21,24 +21,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-// dart-define
-// example --dart-define=FLAVOR=prod
-def dartEnvironmentVariables = [:];
-if (project.hasProperty('dart-defines')) {
-    dartEnvironmentVariables = dartEnvironmentVariables + project.property('dart-defines')
-            .split(',')
-            .collectEntries { entry ->
-                def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
-                [(pair.first()): pair.last()]
-            }
-    println(dartEnvironmentVariables)
-}
-
-println(dartEnvironmentVariables.FLAVOR == 'prod' ? 'key.properties' : "key.${dartEnvironmentVariables.FLAVOR}.properties")
-
 /// Get keystore for build
 def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file(dartEnvironmentVariables.FLAVOR == 'prod' ? 'key.properties' : "key.${dartEnvironmentVariables.FLAVOR}.properties")
+def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
@@ -47,13 +32,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'com.google.gms.google-services'
-//apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdkVersion 33
 
-    def appName = 'GetX Boilerplate'
-//    def appIdentifier = 'com.quangnd.getxboilerplate'
+    flavorDimensions "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            applicationId "com.vivi.wallet_user.dev"
+            resValue "string", "app_name", "ViVi.dev"
+        }
+        prod {
+            dimension "flavor-type"
+            applicationId "com.vivi.wallet_user"
+            resValue "string", "app_name", "ViVi"
+        }
+    }
+
+   compileSdkVersion 33
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -70,11 +68,6 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
-        if (dartEnvironmentVariables.FLAVOR != 'prod') {
-            applicationIdSuffix ".${dartEnvironmentVariables.FLAVOR}"
-            appName += ".${dartEnvironmentVariables.FLAVOR}"
-        }
-        resValue "string", "app_name", appName
     }
 
     signingConfigs {
@@ -103,26 +96,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
 //    implementation 'com.google.firebase:firebase-messaging: 21.0.0'
     implementation 'com.android.support:multidex:1.0.3'
-//    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
-}
-
-task copySources(type: Copy) {
-    from "src/${dartEnvironmentVariables.FLAVOR}/res"
-    into 'src/main/res'
-}
-tasks.whenTaskAdded { task ->
-    task.dependsOn copySources
-}
-
-
-task selectGoogleServicesJson(type: Copy) {
-    from "src/${dartEnvironmentVariables.FLAVOR}/google-services.json"
-    into './'
-}
-
-tasks.whenTaskAdded { task ->
-    if (task.name == 'processDebugGoogleServices' || task.name == 'processReleaseGoogleServices') {
-        task.dependsOn selectGoogleServicesJson
-    }
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 }
 

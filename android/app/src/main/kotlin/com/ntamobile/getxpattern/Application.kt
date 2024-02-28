@@ -1,4 +1,4 @@
-package com.quangnd.getxboilerplate
+package com.vivi.wallet_user
 
 import io.flutter.app.FlutterApplication
 //Enable this line if use zalo login

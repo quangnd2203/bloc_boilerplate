@@ -1,5 +1,6 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, empty_catches, library_prefixes
 
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
@@ -8,9 +9,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../blocs/language/language_cubit.dart';
 import '../constants/app_enums.dart';
-import '../routes/app_pages.dart';
-import 'utils.dart';
 import 'package:flutter/material.dart';
 
 class AppUtils {
@@ -38,6 +38,8 @@ class AppUtils {
   //   }
   // }
 
+  static String get locale => Get.find<LanguageCubit>().state.locale.languageCode;
+
   static String pathMediaToUrl(String? url) {
     if (url == null || url.startsWith('http')) {
       return url ?? '';
@@ -49,14 +51,14 @@ class AppUtils {
     if (dateTime == null) {
       return '';
     }
-    return DateFormat(format).format(dateTime);
+    return DateFormat(format, locale).format(dateTime);
   }
 
   static DateTime? convertString2DateTime(String? dateTime, {String format = 'yyyy-MM-ddTHH:mm:ss.SSSZ'}) {
     if (dateTime == null) {
       return null;
     }
-    return DateFormat(format).parse(dateTime);
+    return DateFormat(format, locale).parse(dateTime);
   }
 
   static String convertString2String(String? dateTime, {String inputFormat = 'yyyy-MM-ddTHH:mm:ss.SSSZ', String outputFormat = 'yyyy-MM-dd'}) {
@@ -112,17 +114,67 @@ class AppUtils {
   }
 
   // static void logout([bool isReset = true]) {
-    // AppPrefs.userInfo = null;
-    // AppPrefs.accessToken = null;
-    // AppPrefs.userRole = null;
-    // if (isReset) {
-    //   Get.deleteAll(force: true);
-    //   Get.offAllNamed(Routes.SPLASH);
-    // }
+  // AppPrefs.userInfo = null;
+  // AppPrefs.accessToken = null;
+  // AppPrefs.userRole = null;
+  // if (isReset) {
+  //   Get.deleteAll(force: true);
+  //   Get.offAllNamed(Routes.SPLASH);
+  // }
   // }
 
   static Future<FileInfo?> getFileFromNetworkCache(String url) async {
     final FileInfo? fileInfo = await DefaultCacheManager().getFileFromCache(url);
     return fileInfo;
+  }
+
+  static String removeLeadingZero(String phoneNumber) {
+    if (phoneNumber.length == 10 && phoneNumber.startsWith('0')) {
+      return phoneNumber.substring(1);
+    }
+    return phoneNumber;
+  }
+
+  static String calculateDuration(String input) {
+    if (input != null) {
+      final DateTime timeBefore = DateFormat('yyyy-MM-ddTHH:mm:ss.SSSZ').parse(input, true);
+      final Duration time = DateTime.now().difference(timeBefore);
+      if (time.inMinutes < 4) {
+        return 'duration_now'.tr;
+      } else if (time.inHours < 1) {
+        return 'duration_minutes'.trParams(<String, String>{'time': time.inMinutes.toString()});
+      } else if (time.inDays < 1) {
+        return 'duration_hours'.trParams(<String, String>{'time': time.inHours.toString()});
+      } else if (time.inDays < 5) {
+        return 'duration_days'.trParams(<String, String>{'time': time.inDays.toString()});
+      } else {
+        return DateFormat('dd MM yyyy').format(timeBefore);
+      }
+    }
+    return '';
+  }
+
+  static String greetingMessage() {
+    final int timeNow = DateTime.now().hour;
+
+    if (timeNow <= 12) {
+      return 'good_morning'.tr;
+    } else if ((timeNow > 12) && (timeNow <= 16)) {
+      return 'good_afternoon'.tr;
+    } else if ((timeNow > 16) && (timeNow < 20)) {
+      return 'good_evening'.tr;
+    } else {
+      return 'good_night'.tr;
+    }
+  }
+
+  static dynamic jsonTryParse(String source){
+    dynamic data;
+    try{
+      data = jsonDecode(source);
+    }catch(e){
+      data = source;
+    }
+    return data;
   }
 }

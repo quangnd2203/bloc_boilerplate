@@ -232,7 +232,7 @@ class _SwitchButtonState extends State<SwitchButton>
                                     Text(
                                       'ON',
                                       textAlign: TextAlign.center,
-                                      style: AppTextStyles.normalBold.copyWith(
+                                      style: AppTextStyles.medium.copyWith(
                                         fontSize: 14,
                                         color: AppColors.bluePrimary,
                                       ),
@@ -246,7 +246,7 @@ class _SwitchButtonState extends State<SwitchButton>
                                 child: widget.inactiveToggleWidget ??
                                     Text(
                                       'OFF',
-                                      style: AppTextStyles.normalBold.copyWith(
+                                      style: AppTextStyles.medium.copyWith(
                                         fontSize: 14,
                                         color: HexColor.fromHex('8898A5'),
                                       ),
