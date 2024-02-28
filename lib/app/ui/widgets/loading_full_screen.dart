@@ -19,7 +19,7 @@ class LoadingFullScreen extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             child,
-            if (state == ApplicationState.loading) _LoadingWidget(colorBackground, colorLoading) else const SizedBox(),
+            if (state.loading == ApplicationLoading.loading) _LoadingWidget(colorBackground, colorLoading) else const SizedBox(),
           ],
         );
       },

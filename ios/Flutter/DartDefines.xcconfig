@@ -1,4 +1,0 @@
-#include "dev.xcconfig"
-identifier=com.quangnd.getxboilerplate
-PRODUCT_BUNDLE_IDENTIFIER=$(identifier)$(APP_ID_SUFFIX)
-APP_LINK=applinks:getxboilerplate$(APP_LINK_SUFFIX).page.link
