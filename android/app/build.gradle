@@ -32,8 +32,31 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+/// Get keystore for build
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
 //apply plugin: 'com.android.application'
@@ -45,21 +68,31 @@ plugins {
 android {
 
     flavorDimensions "flavor-type"
+    def _applicationId = "com.quangnd.bloc_boilerplate"
+    def _appName = "Bloc Boilerplate"
 
     productFlavors {
         dev {
             dimension "flavor-type"
-            applicationId "com.vivi.wallet_user.dev"
-            resValue "string", "app_name", "ViVi.dev"
+            applicationId "${_applicationId}.dev"
+            namespace "${_applicationId}.dev"
+            resValue "string", "app_name", "${_appName}.dev"
+        }
+        staging{
+            dimension "flavor-type"
+            applicationId "${_applicationId}.staging"
+            namespace "${_applicationId}.staging"
+            resValue "string", "app_name", "${_appName}.staging"
         }
         prod {
             dimension "flavor-type"
-            applicationId "com.vivi.wallet_user"
-            resValue "string", "app_name", "ViVi"
+            applicationId "${_applicationId}"
+            namespace "${_applicationId}"
+            resValue "string", "app_name", "${_appName}"
         }
     }
 
-   compileSdkVersion 33
+    compileSdkVersion 34
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -72,7 +105,7 @@ android {
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -93,6 +126,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 flutter {
@@ -100,7 +142,7 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
     implementation platform('com.google.firebase:firebase-bom:30.1.0')
 //    implementation 'com.google.firebase:firebase-messaging: 21.0.0'
     implementation 'com.android.support:multidex:1.0.3'

@@ -95,8 +95,6 @@ flutter:
     - assets/images/jpg/
     - assets/images/svg/
     - assets/images/gif/
-    - assets/animationFile/
-    - assets/images/flags/
 
   fonts:
     - family: Roboto
