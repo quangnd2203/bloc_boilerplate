@@ -1,7 +1,0 @@
-#include "Generated.xcconfig"
-
-ASSET_PREFIX=prod
-BUNDLE_NAME=ViVi
-BUNDLE_DISPLAY_NAME=ViVi
-FLAVOR=prod
-APP_LINK=applinks:viviuser.page.link
