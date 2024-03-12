@@ -28,10 +28,10 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   void _initialBlocs() {
     getx.Get.put(ApplicationCubit(), permanent: true);
-    // getx.Get.put(ProfileCubit(), permanent: true);
+    getx.Get.put(ThemeCubit(), permanent: true);
     getx.Get.put(LanguageCubit(), permanent: true);
+    // getx.Get.put(ProfileCubit(), permanent: true);
     // getx.Get.put(AuthenticationCubit(), permanent: true);
-    // getx.Get.put(ThemeCubit()..onChangeConfig(AppPrefs.config), permanent: true);
     // getx.Get.put(LocalServerCubit()..firstCreateLocalServerAppClient(), permanent: true);
   }
 

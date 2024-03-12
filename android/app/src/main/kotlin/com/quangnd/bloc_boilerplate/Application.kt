@@ -1,5 +1,4 @@
-package com.vivi.wallet_user
-
+package com.quangnd.bloc_boilerplate
 import io.flutter.app.FlutterApplication
 //Enable this line if use zalo login
 //import com.zing.zalo.zalosdk.oauth.ZaloSDKApplication

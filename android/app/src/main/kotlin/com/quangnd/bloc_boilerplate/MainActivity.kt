@@ -1,5 +1,4 @@
-package com.vivi.wallet_user
-
+package com.quangnd.bloc_boilerplate
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
