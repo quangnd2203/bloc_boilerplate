@@ -4,36 +4,33 @@ abstract class Routes {
   static const String SPLASH = '/';
 
   static const String LOGIN = '/login';
-  static const String REGISTER_EMAIL = '/register_email';
-  static const String RESET_PASSWORD = '/reset_password';
-
-  static const String DASH_BOARD = '/dash_board';
-  static const String DOOR_CREATE_SETTING = '/door_create_setting';
-  static const String DOOR_GROUP_DETAIL = '/door_group_detail';
-  static const String HISTORY = '/history';
-  static const String DEVICE_DETAIL = '/device_detail';
-  static const String CREATE_NEW_DEVICE = '/create_new_device';
-  static const String DOOR_LIST = '/door_list';
-  static const String ACCOUNT_SETTING = '/account_setting';
-  static const String USER_SETTING_GROUP = '/user_setting_group';
-  static const String USER_SETTING_SUBORDINATE = '/user_setting_subordinate';
-  // static const String NOTIFICATION_SETTINGS = '/notification_settings';
-  static const String NOTIFICATION_LIST = '/notification_list';
-  static const String USER_DETAIL = '/user_detail';
-
-  static const String CONTACT = '/contact';
-  static const String INITIAL = '/';
-  static const String DEVICE_LIST = '/device_list';
-  static const String USER_LIST = '/user_list';
-  static const String NEWS_DETAIL = '/news_detail';
-
-  static const String DEVICE_MANAGE_GETWAY =
-      '/device_detail/device_manager_setting_dialog';
-
-  static const String SETTING_NOTIFICATION_DETAIL = '/setting_notification_detail';
-  static const String SETTING_NOTIFICATION_EVENT = '/setting_notification_event';
-  static const String SETTING_NOTIFICATION_DOORS = '/setting_notification_doors';
-  static const String SETTING_NOTIFICATION_USERS = '/setting_notification_users';
-  static const String EXISTING_ACCOUNT = '/existing_account';
-
+  static const String REGISTER = '/register';
+  static const String OTP = '/otp';
+  static const String REGISTER_INFO = '/register_info';
+  static const String REGISTER_PIN = '/register_pin';
+  static const String FORGOT_PASSWORD = '/forgot_password';
+  static const String FORGOT_PASSWORD_PIN = '/forgot_password_pin';
+  static const String GETTING = '/getting';
+  static const String LANGUAGE = '/language';
+  static const String SELECT_SERVER = '/select_server';
+  static const String DASHBOARD = '/dashboard';
+  static const String PROFILE_UPDATE = '/profile_update';
+  static const String MERCHANT_DETAIL = '/merchant_detail';
+  static const String QR_CODE_SCANNER = '/qr_code_scanner';
+  static const String TRANSACTION_MONEY = '/transaction_money';
+  static const String TRANSACTION_USERS_TRANSFER = '/transaction_users_transfer';
+  static const String TRANSACTION_USERS_CASH_OUT = '/transaction_users_cash_out';
+  static const String TRANSACTION_USERS_REQUEST = '/transaction_users_request';
+  static const String MY_QRCODE = '/my_qrcode';
+  static const String WITHDRAW_HISTORY = '/withdraw_history';
+  static const String REQUEST_HISTORY = '/request_history';
+  static const String OWNER_REQUEST_HISTORY = '/owner_request_history';
+  static const String TRANSACTION_HISTORY = '/transaction_history';
+  static const String CHANGE_PIN = '/change_pin';
+  static const String ABOUT_US = '/about_us';
+  static const String POLICY = '/policy';
+  static const String TERMS = '/terms';
+  static const String FAQ = '/faq';
+  static const String SUPPORT = '/support';
+  static const String VERIFY_ACCOUNT = '/verify_account';
 }

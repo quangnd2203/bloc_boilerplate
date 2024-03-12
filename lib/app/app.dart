@@ -5,13 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart' as getx;
 import 'package:logger/logger.dart';
 import 'blocs/application/application_cubit.dart';
-import 'blocs/authentication/authentication_cubit.dart';
 import 'blocs/language/language_cubit.dart';
+import 'blocs/language/language_select_state.dart';
 import 'blocs/theme/theme_cubit.dart';
 import 'constants/constants.dart';
 import 'routes/app_pages.dart';
 import 'translations/app_translations.dart';
-import 'ui/ui.dart';
+import 'ui/widgets/loading_full_screen.dart';
 import 'utils/utils.dart';
 
 class App extends StatefulWidget {
@@ -28,9 +28,11 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   void _initialBlocs() {
     getx.Get.put(ApplicationCubit(), permanent: true);
-    getx.Get.put(LanguageCubit(), permanent: true);
-    getx.Get.put(AuthenticationCubit(), permanent: true);
     getx.Get.put(ThemeCubit(), permanent: true);
+    getx.Get.put(LanguageCubit(), permanent: true);
+    // getx.Get.put(ProfileCubit(), permanent: true);
+    // getx.Get.put(AuthenticationCubit(), permanent: true);
+    // getx.Get.put(LocalServerCubit()..firstCreateLocalServerAppClient(), permanent: true);
   }
 
   @override
@@ -40,6 +42,7 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
     _initialBlocs();
     WidgetsBinding.instance.addObserver(this);
     AppDeviceInfo.init();
+    // FirebaseService().init();
   }
 
   @override
@@ -62,29 +65,32 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
       },
       child: bloc.MultiBlocListener(
         listeners: <bloc.BlocListener>[
-          bloc.BlocListener<LanguageCubit, AppLocale>(
+          bloc.BlocListener<LanguageCubit, LanguageSelectState>(
             bloc: getx.Get.find<LanguageCubit>(),
-            listener: (BuildContext context, AppLocale state) {
-              getx.Get.updateLocale(state.value);
+            listener: (BuildContext context, LanguageSelectState state) {
+              getx.Get.updateLocale(state.locale);
             },
           ),
         ],
-        child: LoadingFullScreen(
-          child: bloc.BlocBuilder<ThemeCubit, ThemeState>(
-            bloc: getx.Get.find<ThemeCubit>(),
-            builder: (BuildContext context, ThemeState state) {
-              return getx.GetMaterialApp(
-                debugShowCheckedModeBanner: false,
-                theme: state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme,
-                title: APP_NAME,
-                initialRoute: Routes.SPLASH,
-                defaultTransition: getx.Transition.cupertino,
-                getPages: AppPages.pages,
-                locale: getx.Get.find<LanguageCubit>().state.value,
-                translationsKeys: AppTranslation.translations,
-              );
-            },
-          ),
+        child: bloc.BlocBuilder<ThemeCubit, ThemeState>(
+          bloc: getx.Get.find<ThemeCubit>(),
+          builder: (BuildContext context, ThemeState state) {
+            return getx.GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: (state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme).copyWith(
+                scaffoldBackgroundColor: AppColors.getWhiteAndBlack,
+              ),
+              title: APP_NAME,
+              initialRoute: Routes.SPLASH,
+              defaultTransition: getx.Transition.cupertino,
+              getPages: AppPages.pages,
+              locale: getx.Get.find<LanguageCubit>().state.locale,
+              translationsKeys: AppTranslation.translations,
+              builder: (BuildContext context, Widget? child) {
+                return LoadingFullScreen(child: child!);
+              },
+            );
+          },
         ),
       ),
     );
@@ -102,7 +108,7 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   @override
   void onCreate(bloc.BlocBase bloc) {
-    logger.d('onCreate: $bloc');
+    logger.d('onCreate: $bloc with ${bloc.state}');
   }
 
   @override
