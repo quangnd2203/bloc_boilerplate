@@ -1,42 +1,50 @@
 {
   "project_info": {
-    "project_number": "677174211807",
-    "project_id": "GetXboilerplate-c8bc0",
-    "storage_bucket": "GetXboilerplate-c8bc0.appspot.com"
+    "project_number": "98490476158",
+    "project_id": "vivi-dev-880c3",
+    "storage_bucket": "vivi-dev-880c3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:677174211807:android:0debb76b781e69ed2f256a",
+        "mobilesdk_app_id": "1:98490476158:android:a6ff746ecc56546e015a2f",
         "android_client_info": {
-          "package_name": "com.quangnd.getxboilerplate.dev"
+          "package_name": "com.vivi.wallet_user.dev"
         }
       },
       "oauth_client": [
         {
-          "client_id": "677174211807-45qi4ois1dj9sgg6l5t929qjvum139d4.apps.googleusercontent.com",
+          "client_id": "98490476158-t74oihdh55ccbseoea3nq9j4qeedomaq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.quangnd.getxboilerplate.dev",
-            "certificate_hash": "c7c6371a0f493f9f70db9df27cea8bc90c9a599f"
+            "package_name": "com.vivi.wallet_user.dev",
+            "certificate_hash": "97960c93f70258efc58939914e7c037097073a7e"
           }
         },
         {
-          "client_id": "677174211807-ui09qd26ljehsr2onkps8jnpkaiaj1jj.apps.googleusercontent.com",
+          "client_id": "98490476158-a1ib8snulajn1553nrae3njilm3tuj92.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBc5BjZ90xWzeQwQZf8WV-rOYV_zNqvAhM"
+          "current_key": "AIzaSyDUj2XtBNjk51odHnKVrKkw1g9Tg3Jaj7Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "677174211807-ui09qd26ljehsr2onkps8jnpkaiaj1jj.apps.googleusercontent.com",
+              "client_id": "98490476158-a1ib8snulajn1553nrae3njilm3tuj92.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "98490476158-i7bdo6l2mj4aqdj8nsiotbldmrk8pd6q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vivi.users.dev",
+                "app_store_id": "123456789"
+              }
             }
           ]
         }

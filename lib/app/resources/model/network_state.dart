@@ -1,10 +1,12 @@
-// ignore_for_file: avoid_dynamic_calls
+// ignore_for_file: avoid_dynamic_calls, invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member, deprecated_member_use
 
-import 'dart:convert';
-import 'dart:developer';
 import 'package:dio/dio.dart' as dio;
 import 'package:get/get.dart';
+import '../../blocs/authentication/authentication_cubit.dart';
 import '../../constants/app_endpoint.dart';
+import '../../constants/app_values.dart';
+import '../../routes/app_pages.dart';
+import 'error_body_model.dart';
 
 typedef NetworkStateConverter<T> = T Function(dynamic json);
 
@@ -20,43 +22,6 @@ class NetworkState<T> {
 
   NetworkState.withErrorConvert() {
     data = null;
-  }
-
-  factory NetworkState.fromResponse(dio.Response<dynamic> response, {NetworkStateConverter<T>? converter, T? value, String? prefix}) {
-    try {
-      final Map<String, dynamic> json = jsonDecode(jsonEncode(response.data)) as Map<String, dynamic>;
-      return NetworkState<T>._fromJson(
-        json,
-        converter: converter,
-        prefix: prefix,
-        value: value,
-      );
-    } catch (e) {
-      log('Error NetworkResponse.fromResponse: $e');
-      return NetworkState<T>.withErrorConvert();
-    }
-  }
-
-  NetworkState._fromJson(Map<String, dynamic> json, {NetworkStateConverter<T>? converter, T? value, String? prefix}) {
-    status = json['status'] as int?;
-    message = json['message'] as String?;
-    if (value != null)
-      data = value;
-    else if (prefix != null) {
-      if (prefix.trim().isEmpty) {
-        data = converter != null && json != null ? converter(json) : json as T?;
-      } else {
-        data = converter != null && json[prefix] != null ? converter(json[prefix] as Map<String, dynamic>) : json[prefix] as T?;
-      }
-    } else {
-      data = converter != null && json['data'] != null ? converter(json['data']) : json['data'] as T?;
-    }
-  }
-
-  NetworkState.fromJson(Map<String, dynamic> json) {
-    message = json['message'] as String?;
-    status = json['status'] as int?;
-    data = json['data'] as T;
   }
 
   NetworkState.withError(dio.DioError error) {
@@ -79,12 +44,26 @@ class NetworkState<T> {
   String? _handleMessageByStatusCode(int? statusCode, dio.DioError error) {
     switch (statusCode) {
       case AppEndpoint.UNAUTHORIZED:
-        return null;
+        // if(!Get.currentRoute.contains(Routes.LOGIN)){
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLogout(false, true));
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLoading());
+        // }
+        // if(!AUTHORIZED_ROUTES.contains(Get.currentRoute)){
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLogout(false, true));
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLoading());
+        // }
+        break;
+      case AppEndpoint.TOO_MANY_REQUEST:
+        return 'too_many_request';
 
-      case AppEndpoint.FORBIDDEN:
-        return 'no_permission';
+      case AppEndpoint.ERROR_DISCONNECT:
+        // if(!Get.currentRoute.contains(Routes.LOGIN)){
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLogout(false, false));
+        //   Get.find<AuthenticationCubit>().emit(AuthenticationStateLoading());
+        // }
+        return null;
     }
-    return null;
+    return (error.response?.data['message'] as String?) ?? ErrorBody.fromJson(error.response?.data).errors!.first.message ?? '';
   }
 
   int? status;

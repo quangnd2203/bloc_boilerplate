@@ -7,7 +7,7 @@
 // import 'local_notification.dart';
 // import 'notification_data.dart';
 //
-// Future<void> notificationInitialed() async {
+// Future<void>  notificationInitialed() async {
 //   FirebaseCloudMessaging.initFirebaseMessaging();
 //   LocalNotification.setup();
 // }

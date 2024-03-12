@@ -14,5 +14,5 @@
     <string name="fb_login_client_token">ee165a45f307a018844d2edbc49cb3e1</string>
 
     <!--DEEP LINK HOST-->
-    <string name="host">none</string>
+    <string name="host"></string>
 </resources>

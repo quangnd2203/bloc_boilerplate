@@ -23,16 +23,14 @@
 //   }
 //
 //   static Future<void> initFirebaseMessaging() async {
-//     if (Platform.isIOS) {
-//       await instance.requestPermission();
-//     }
+//     await instance.requestPermission();
 //     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-//       log('OnMessage: ${message.data}');
+//       log('onMessage: ${message.data}');
 //       _handler(message, show: true);
 //     });
 //     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-//       log('OnMessageOpenedApp: ${message.data}');
-//       _handler(message);
+//       log('onMessageOpenApp: ${message.data}');
+//       _handler(message,show: true);
 //     });
 //     FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
 //     final RemoteMessage? initMessage = await FirebaseMessaging.instance.getInitialMessage();
@@ -52,4 +50,11 @@
 //     }
 //   }
 //
+//   static void subscribeToTopic(String topic){
+//     FirebaseMessaging.instance.subscribeToTopic(topic);
+//   }
+//
+//   static void unSubscribeToTopic(String topic){
+//     FirebaseMessaging.instance.unsubscribeFromTopic(topic);
+//   }
 // }

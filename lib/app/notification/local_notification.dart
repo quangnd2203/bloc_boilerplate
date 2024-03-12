@@ -16,7 +16,7 @@
 //     //setup local notification
 //     notificationAppLaunchDetails = await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
 //
-//     const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('ic_launcher');
+//     const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
 //     // Note: permissions aren't requested here just to demonstrate that can be done later using the `requestPermissions()` method
 //     // of the `IOSFlutterLocalNotificationsPlugin` class
 //     final DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings(

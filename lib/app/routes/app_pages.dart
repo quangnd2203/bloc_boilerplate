@@ -13,11 +13,5 @@ class AppPages {
       name: Routes.SPLASH,
       page: () => SplashScreen(),
     ),
-    // GetPage(
-    //   name: Routes.SETTING_NOTIFICATION_DETAIL,
-    //   page: () => SettingNotificationDetailScreen(),
-    //   binding: SettingNotificationDetailBinding(),
-    //   title: 'notification_settings_title',
-    // ),
   ];
 }
