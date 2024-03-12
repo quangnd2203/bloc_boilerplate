@@ -1,8 +1,0 @@
-#include "Generated.xcconfig"
-
-ASSET_PREFIX=dev
-BUNDLE_NAME=ViVi.dev
-BUNDLE_DISPLAY_NAME=ViVi.dev
-FLAVOR=dev
-SUFFIX=.dev
-APP_LINK=
