@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1430"
+   LastUpgradeVersion = "1510"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "97C146ED1CF9000F007C117D"
-                     BuildableName = "ViVi.dev.app"
+                     BuildableName = "Bloc_boilerplate.dev.app"
                      BlueprintName = "Runner"
                      ReferencedContainer = "container:Runner.xcodeproj">
                   </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "97C146ED1CF9000F007C117D"
-               BuildableName = "ViVi.dev.app"
+               BuildableName = "Bloc_boilerplate.dev.app"
                BlueprintName = "Runner"
                ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
@@ -49,7 +49,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97C146ED1CF9000F007C117D"
-            BuildableName = "ViVi.dev.app"
+            BuildableName = "Bloc_boilerplate.dev.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97C146ED1CF9000F007C117D"
-            BuildableName = "ViVi.dev.app"
+            BuildableName = "Bloc_boilerplate.dev.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -89,7 +89,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97C146ED1CF9000F007C117D"
-            BuildableName = "ViVi.dev.app"
+            BuildableName = "Bloc_boilerplate.dev.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
