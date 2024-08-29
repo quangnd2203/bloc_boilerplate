@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import '../blocs/language/language_cubit.dart';
 import '../constants/app_enums.dart';
 import 'package:flutter/material.dart';
 
@@ -37,8 +36,6 @@ class AppUtils {
   //     return values.first;
   //   }
   // }
-
-  static String get locale => Get.find<LanguageCubit>().state.locale.languageCode;
 
   static String pathMediaToUrl(String? url) {
     if (url == null || url.startsWith('http')) {

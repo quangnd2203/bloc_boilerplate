@@ -2,12 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
-import 'app/app.dart';
-import 'app/constants/constants.dart';
+import 'application/app.dart';
 import 'app/utils/utils.dart';
+import 'interface/client/client.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

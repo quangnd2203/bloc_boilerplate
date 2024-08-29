@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../blocs/language/language_select_state.dart';
 import '../extensions/extensions.dart';
-import '../routes/app_pages.dart';
+import '../../application/route/app_pages.dart';
 import 'app_images.dart';
 
 double get viewPaddingTop => Get.mediaQuery.viewPadding.top;
@@ -42,21 +41,6 @@ final List<Color> availablePickerColors = <Color>[
   HexColor.fromHex('#F1C3C9'),
   HexColor.fromHex('#EDB1B9'),
   HexColor.fromHex('#EABCAB'),
-];
-
-final List<LanguageSelectState> appLanguages = <LanguageSelectState>[
-  LanguageSelectState(
-    imageUrl: AppImages.png('vietnam'),
-    languageName: 'Tiếng Việt',
-    languageCode: AppLocale.vi.value.languageCode,
-    countryCode: AppLocale.vi.value.countryCode,
-  ),
-  LanguageSelectState(
-    imageUrl: AppImages.png('english'),
-    languageName: 'English',
-    languageCode: AppLocale.en.value.languageCode,
-    countryCode: AppLocale.en.value.countryCode,
-  ),
 ];
 
 const int INDEX_NOT_FOUND = -1;

@@ -2,8 +2,8 @@
 
 import 'package:get/get.dart';
 
-import '../ui/splash/splash.dart';
-part './app_routes.dart';
+import '../../app/ui/splash/splash.dart';
+part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
