@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart' as getx;
 import 'package:logger/logger.dart';
-import 'blocs/application/application_cubit.dart';
-import 'blocs/language/language_cubit.dart';
-import 'blocs/language/language_select_state.dart';
-import 'blocs/theme/theme_cubit.dart';
-import 'constants/constants.dart';
-import 'routes/app_pages.dart';
-import 'translations/app_translations.dart';
-import 'ui/widgets/loading_full_screen.dart';
-import 'utils/utils.dart';
+import '../app/blocs/application/application_cubit.dart';
+import '../app/blocs/language/language_cubit.dart';
+import '../app/blocs/language/language_select_state.dart';
+import '../app/blocs/theme/theme_cubit.dart';
+import '../app/constants/constants.dart';
+import 'route/app_pages.dart';
+import '../app/translations/app_translations.dart';
+import '../app/ui/widgets/loading_full_screen.dart';
+import '../app/utils/utils.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
