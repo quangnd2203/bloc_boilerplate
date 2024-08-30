@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../extensions/extensions.dart';
 import '../../application/route/app_pages.dart';
+import '../extensions/hex_color.dart';
 import 'app_images.dart';
 
 double get viewPaddingTop => Get.mediaQuery.viewPadding.top;

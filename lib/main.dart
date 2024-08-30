@@ -7,7 +7,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 import 'application/app.dart';
-import 'app/utils/utils.dart';
+import 'common/constants/app_values.dart';
 import 'interface/client/client.dart';
 
 Future<void> main() async {
@@ -22,7 +22,7 @@ Future<void> main() async {
   ));
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp]);
   flavor = (await const MethodChannel('flavor').invokeMethod<String>('getFlavor'))!;
-  await AppPrefs.initListener();
+  // await AppPrefs.initListener();
   Logger().d('RUNNING IN $flavor ENVIRONMENT'.toUpperCase());
   runApp(const App());
 }

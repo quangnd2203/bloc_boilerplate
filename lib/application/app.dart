@@ -8,11 +8,9 @@ import '../app/blocs/application/application_cubit.dart';
 import '../app/blocs/language/language_cubit.dart';
 import '../app/blocs/language/language_select_state.dart';
 import '../app/blocs/theme/theme_cubit.dart';
-import '../app/constants/constants.dart';
+import '../common/utils/app_device.dart';
 import 'route/app_pages.dart';
-import '../app/translations/app_translations.dart';
 import '../app/ui/widgets/loading_full_screen.dart';
-import '../app/utils/utils.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
