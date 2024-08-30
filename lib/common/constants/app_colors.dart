@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../extensions/extensions.dart';
+import '../extensions/hex_color.dart';
 
 class AppColors {
   AppColors._();
