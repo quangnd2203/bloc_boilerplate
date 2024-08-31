@@ -8,30 +8,25 @@ enum ApplicationLoading {
 class ApplicationState extends Equatable {
   const ApplicationState({
     this.loading = ApplicationLoading.completed,
-    // this.config,
-    // this.states,
+    this.connectivityResult = ConnectivityResult.wifi,
   });
 
-  // final ConfigModel? config;
-  // final List<StateModel>? states;
   final ApplicationLoading loading;
+  final ConnectivityResult connectivityResult;
 
   ApplicationState copyWith({
-    // ConfigModel? config,
-    // List<StateModel>? states,
     ApplicationLoading? loading,
+    ConnectivityResult? connectivityResult
   }) {
     return ApplicationState(
-      // config: config ?? this.config,
-      // states: states ?? this.states,
       loading: loading ?? this.loading,
+      connectivityResult: connectivityResult ?? this.connectivityResult,
     );
   }
 
   @override
   List<Object?> get props => <Object?>[
-        loading,
-        // config,
-        // states,
-      ];
+    loading,
+    connectivityResult
+  ];
 }

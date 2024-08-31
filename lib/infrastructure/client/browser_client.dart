@@ -1,13 +1,16 @@
-import 'package:dio/dio.dart';
 import 'package:dio/browser.dart';
+import 'package:dio/dio.dart';
+import 'package:get/get.dart' as getx;
 import 'package:logger/logger.dart';
 
-import '../../../common/constants/app_endpoint.dart';
+import '../../../core/constants/app_endpoint.dart';
 import '../../../interface/client/client.dart';
+import '../../core/constants/app_pref.dart';
+import '../../interface/repository/local_storage.dart';
 
-class BrowserClient extends DioForBrowser implements IClient{
+class NativeClient extends DioForBrowser implements IClient{
 
-  BrowserClient({required String baseUrl, BaseOptions? options}) : super(options) {
+  NativeClient({required String baseUrl, BaseOptions? options}) : super(options) {
     interceptors.add(InterceptorsWrapper(
       onRequest: requestInterceptor,
       onResponse: responseInterceptor,
@@ -17,14 +20,14 @@ class BrowserClient extends DioForBrowser implements IClient{
     this.options.headers = <String, String>{'content-type': 'application/json', 'accept': 'application/json'};
   }
 
-  @override
   final Logger logger = Logger();
+
+  final ILocalStorageRepository localStorageRepository = getx.Get.find<ILocalStorageRepository>();
 
   @override
   Future<void> requestInterceptor(RequestOptions options, RequestInterceptorHandler handler) async {
-    // final String? accessToken = AppPrefs.accessToken;
-    const String accessToken = 'access_token';
-    options.headers.addAll({
+    final String? accessToken = await localStorageRepository.getData(AppPref.ACCESS_TOKEN.name);
+    options.headers.addAll(<String, dynamic>{
       'Authorization': 'Bearer $accessToken',
     });
     // if(flavor == 'dev' || (AppDeviceInfo.isPhysicalDevice ?? false)){

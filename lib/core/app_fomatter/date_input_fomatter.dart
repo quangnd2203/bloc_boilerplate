@@ -3,7 +3,8 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import '../../constants/app_values.dart';
+import '../constants/app_values.dart';
+
 
 class DateInputFormatter extends TextInputFormatter {
   final String _placeholder = '--/----';
@@ -42,7 +43,7 @@ class DateInputFormatter extends TextInputFormatter {
 
     int index = _indexOfDifference(newText, oldText);
     if (oldText.length < newText.length) {
-      String newChar = newText[index];
+      final String newChar = newText[index];
       if (index == 2) {
         index++;
         offset++;

@@ -3,7 +3,7 @@
 import 'package:dio/dio.dart' as dio;
 import 'package:get/get.dart';
 import '../../app/resources/model/error_body_model.dart';
-import '../../common/constants/app_endpoint.dart';
+import '../../core/constants/app_endpoint.dart';
 
 typedef NetworkStateConverter<T> = T Function(dynamic json);
 
