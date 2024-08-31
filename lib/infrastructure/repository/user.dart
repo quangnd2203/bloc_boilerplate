@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as getx;
 
-import '../../common/constants/app_endpoint.dart';
+import '../../core/constants/app_endpoint.dart';
 import '../model/network_state.dart';
 import '../../interface/client/client.dart';
 import '../../interface/repository/user.dart';
