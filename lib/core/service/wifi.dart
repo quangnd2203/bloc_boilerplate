@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
 
-import '../../infrastructure/service/wifi.dart';
+import '../../interface/service/wifi.dart';
 
 class WifiService implements IWifiService {
   final Connectivity connectivity = Get.find<Connectivity>();
