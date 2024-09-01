@@ -12,7 +12,7 @@ import '../../domain/usecase/user.dart';
 import '../../infrastructure/client/native_client.dart';
 import '../../infrastructure/repository/local_storage.dart';
 import '../../infrastructure/repository/user.dart';
-import '../../infrastructure/service/wifi.dart';
+import '../../interface/service/wifi.dart';
 import '../../interface/bloc/application.dart';
 import '../../interface/bloc/language.dart';
 import '../../interface/bloc/theme.dart';
