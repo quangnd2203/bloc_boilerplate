@@ -2,7 +2,6 @@
 
 import 'package:dio/dio.dart' as dio;
 import 'package:get/get.dart';
-import '../../app/resources/model/error_body_model.dart';
 import '../../core/constants/app_endpoint.dart';
 
 typedef NetworkStateConverter<T> = T Function(dynamic json);
@@ -60,7 +59,6 @@ class NetworkState<T> {
         // }
         return null;
     }
-    return (error.response?.data['message'] as String?) ?? ErrorBody.fromJson(error.response?.data).errors!.first.message ?? '';
   }
 
   int? status;
