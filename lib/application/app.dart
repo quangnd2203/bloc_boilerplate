@@ -9,6 +9,7 @@ import '../app/blocs/language/language_cubit.dart';
 import '../app/blocs/language/language_select_state.dart';
 import '../app/blocs/theme/theme_cubit.dart';
 import '../common/utils/app_device.dart';
+import '../core/service/logger.dart';
 import 'route/app_pages.dart';
 import '../app/ui/widgets/loading_full_screen.dart';
 
@@ -51,7 +52,7 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    Logger().d('ChangeAppLifecycleState: $state');
+    getx.Get.find<LoggerService>().debug('AppLifecycleState: $state');
   }
 
   @override

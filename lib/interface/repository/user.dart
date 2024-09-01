@@ -1,4 +1,4 @@
-import '../../app/resources/model/model.dart';
+import '../../infrastructure/model/network_state.dart';
 import '../../infrastructure/model/page.dart';
 import '../../infrastructure/model/user.dart';
 

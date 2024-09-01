@@ -7,8 +7,9 @@ import 'package:get/get.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../app/ui/widgets/dialog/dialog.dart';
-import '../../../infrastructure/service/wifi.dart';
 import '../../../interface/bloc/application.dart';
+import '../../../interface/service/crashlytics.dart';
+import '../../../interface/service/wifi.dart';
 
 part 'application_state.dart';
 part 'application_action_helper.dart';
@@ -16,6 +17,7 @@ part 'application_action_helper.dart';
 class ApplicationCubit extends Cubit<ApplicationState> implements IApplicationBloc{
   ApplicationCubit() : super(const ApplicationState()){
     Get.find<IWifiService>().onListener(onWifiStatus);
+    Get.find<ICrashlyticsService>().onApplicationCrash();
   }
 
   final _ApplicationActionHelper helper = _ApplicationActionHelper();
