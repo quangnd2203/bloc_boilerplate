@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 abstract class INotificationUseCase{
-  Future<void> setupFirebaseMessage();
+  Future<void> initialize();
   Future<String?> getFcmToken();
   Future<void> requestPermission();
   void subscribeToTopic(String topic);
