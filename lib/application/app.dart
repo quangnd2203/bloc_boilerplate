@@ -3,45 +3,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart' as getx;
-import 'package:logger/logger.dart';
-import '../app/blocs/application/application_cubit.dart';
-import '../app/blocs/language/language_cubit.dart';
-import '../app/blocs/language/language_select_state.dart';
-import '../app/blocs/theme/theme_cubit.dart';
-import '../common/utils/app_device.dart';
-import '../core/service/logger.dart';
+import '../core/constants/app_values.dart';
+import '../core/di/app_binding.dart';
+import '../interface/service/logger.dart';
+import 'bloc/language/language_cubit.dart';
+import 'bloc/theme/theme_cubit.dart';
 import 'route/app_pages.dart';
 import '../app/ui/widgets/loading_full_screen.dart';
+import 'translations/app_translations.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
-
-  // static FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance);
 
   @override
   _AppState createState() => _AppState();
 }
 
 class _AppState extends State<App> with WidgetsBindingObserver implements bloc.BlocObserver {
-  final Logger logger = Logger();
+  final ILoggerService loggerService = getx.Get.find<ILoggerService>();
 
-  void _initialBlocs() {
-    getx.Get.put(ApplicationCubit(), permanent: true);
-    getx.Get.put(ThemeCubit(), permanent: true);
-    getx.Get.put(LanguageCubit(), permanent: true);
-    // getx.Get.put(ProfileCubit(), permanent: true);
-    // getx.Get.put(AuthenticationCubit(), permanent: true);
-    // getx.Get.put(LocalServerCubit()..firstCreateLocalServerAppClient(), permanent: true);
-  }
 
   @override
   void initState() {
     super.initState();
     bloc.Bloc.observer = this;
-    _initialBlocs();
     WidgetsBinding.instance.addObserver(this);
-    AppDeviceInfo.init();
-    // FirebaseService().init();
   }
 
   @override
@@ -52,7 +38,7 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    getx.Get.find<LoggerService>().debug('AppLifecycleState: $state');
+    loggerService.debug('AppLifecycleState: $state');
   }
 
   @override
@@ -64,10 +50,10 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
       },
       child: bloc.MultiBlocListener(
         listeners: <bloc.BlocListener>[
-          bloc.BlocListener<LanguageCubit, LanguageSelectState>(
+          bloc.BlocListener<LanguageCubit, AppLocale>(
             bloc: getx.Get.find<LanguageCubit>(),
-            listener: (BuildContext context, LanguageSelectState state) {
-              getx.Get.updateLocale(state.locale);
+            listener: (BuildContext context, AppLocale state) {
+              getx.Get.updateLocale(state.value);
             },
           ),
         ],
@@ -79,11 +65,12 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
               theme: (state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme).copyWith(
                 scaffoldBackgroundColor: AppColors.getWhiteAndBlack,
               ),
+              initialBinding: AppBinding(),
               title: APP_NAME,
               initialRoute: Routes.SPLASH,
               defaultTransition: getx.Transition.cupertino,
               getPages: AppPages.pages,
-              locale: getx.Get.find<LanguageCubit>().state.locale,
+              locale: getx.Get.find<LanguageCubit>().state.value,
               translationsKeys: AppTranslation.translations,
               builder: (BuildContext context, Widget? child) {
                 return LoadingFullScreen(child: child!);
@@ -97,31 +84,31 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
 
   @override
   void onChange(bloc.BlocBase bloc, bloc.Change change) {
-    logger.d('onChange: $bloc - $change');
+    loggerService.debug('onChange: $bloc - $change');
   }
 
   @override
   void onClose(bloc.BlocBase bloc) {
-    logger.d('onClose: $bloc');
+    loggerService.debug('onClose: $bloc');
   }
 
   @override
   void onCreate(bloc.BlocBase bloc) {
-    logger.d('onCreate: $bloc with ${bloc.state}');
+    loggerService.debug('onCreate: $bloc with ${bloc.state}');
   }
 
   @override
   void onError(bloc.BlocBase bloc, Object error, StackTrace stackTrace) {
-    logger.d('onError: $bloc - $error - $stackTrace');
+    loggerService.debug('onError: $bloc - $error - $stackTrace');
   }
 
   @override
   void onEvent(bloc.Bloc bloc, Object? event) {
-    logger.d('onEvent: $event');
+    loggerService.debug('onEvent: $event');
   }
 
   @override
   void onTransition(bloc.Bloc bloc, bloc.Transition transition) {
-    logger.d('onTransition: $bloc - $transition');
+    loggerService.debug('onTransition: $bloc - $transition');
   }
 }
