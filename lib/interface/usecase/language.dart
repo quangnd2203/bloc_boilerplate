@@ -1,4 +1,4 @@
-import '../../core/constants/app_values.dart';
+import '../../core/constants/app_locale.dart';
 
 abstract class ILanguageUseCase{
   void update(AppLocale locale);

@@ -1,19 +1,13 @@
 part of 'application_cubit.dart';
 
-enum ApplicationLoading {
-  loading,
-  completed,
-}
+class ApplicationState extends IApplicationState{
 
-class ApplicationState extends Equatable {
   const ApplicationState({
-    this.loading = ApplicationLoading.completed,
-    this.connectivityResult = ConnectivityResult.wifi,
+    super.loading = ApplicationLoading.completed,
+    super.connectivityResult = ConnectivityResult.wifi,
   });
 
-  final ApplicationLoading loading;
-  final ConnectivityResult connectivityResult;
-
+  @override
   ApplicationState copyWith({
     ApplicationLoading? loading,
     ConnectivityResult? connectivityResult
@@ -23,10 +17,4 @@ class ApplicationState extends Equatable {
       connectivityResult: connectivityResult ?? this.connectivityResult,
     );
   }
-
-  @override
-  List<Object?> get props => <Object?>[
-    loading,
-    connectivityResult
-  ];
 }

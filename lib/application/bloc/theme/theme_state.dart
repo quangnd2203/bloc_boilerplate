@@ -1,12 +1,9 @@
 part of 'theme_cubit.dart';
 
-class ThemeState extends Equatable {
-  const ThemeState({required this.mode, required this.lightTheme, required this.darkTheme});
+class ThemeState extends IThemeState{
+  const ThemeState({required super.mode, required super.lightTheme, required super.darkTheme});
 
-  final ThemeMode mode;
-  final ThemeData lightTheme;
-  final ThemeData darkTheme;
-
+  @override
   ThemeState copyWith({ThemeMode? mode, ThemeData? lightTheme, ThemeData? darkTheme}) {
     return ThemeState(
       mode: mode ?? this.mode,

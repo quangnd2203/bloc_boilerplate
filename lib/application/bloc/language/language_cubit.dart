@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_values.dart';
-import '../../../interface/bloc/language.dart';
+import '../../../core/constants/app_locale.dart';
+import '../../../interface/bloc/language/language_cubit.dart';
 import '../../../interface/usecase/language.dart';
 
-class LanguageCubit extends Cubit<AppLocale> implements ILanguageBloc {
+class LanguageCubit extends Cubit<AppLocale> implements ILanguageCubit {
   LanguageCubit() : super(AppLocale.en) {
     languageUseCase.get().then((AppLocale? value) {
       if (value != null) {

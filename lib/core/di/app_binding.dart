@@ -12,10 +12,12 @@ import '../../domain/usecase/user.dart';
 import '../../infrastructure/client/native_client.dart';
 import '../../infrastructure/repository/local_storage.dart';
 import '../../infrastructure/repository/user.dart';
+import '../../interface/bloc/application/application_cubit.dart';
+import '../../interface/bloc/language/language_cubit.dart';
+import '../../interface/service/crashlytics.dart';
+import '../../interface/service/logger.dart';
 import '../../interface/service/wifi.dart';
-import '../../interface/bloc/application.dart';
-import '../../interface/bloc/language.dart';
-import '../../interface/bloc/theme.dart';
+import '../../interface/bloc/theme/theme_cubit.dart';
 import '../../interface/client/client.dart';
 import '../../interface/repository/local_storage.dart';
 import '../../interface/repository/user.dart';
@@ -23,6 +25,8 @@ import '../../interface/usecase/language.dart';
 import '../../interface/usecase/theme_mode.dart';
 import '../../interface/usecase/user.dart';
 import '../constants/app_values.dart';
+import '../service/crashlytics.dart';
+import '../service/logger.dart';
 import '../service/wifi.dart';
 
 class AppBinding extends Bindings{
@@ -41,16 +45,16 @@ class AppBinding extends Bindings{
       }
       return NativeClient(baseUrl: baseUrl);
     });
+    dependencyService();
     dependencyBloc();
     dependencyUseCase();
     dependencyRepository();
-    dependencyService();
   }
 
   void dependencyBloc(){
-    Get.lazyPut<IApplicationBloc>(() => ApplicationCubit());
-    Get.lazyPut<ILanguageBloc>(() => LanguageCubit());
-    Get.lazyPut<IThemeBloc>(() => ThemeCubit());
+    Get.lazyPut<IApplicationCubit>(() => ApplicationCubit());
+    Get.lazyPut<ILanguageCubit>(() => LanguageCubit());
+    Get.lazyPut<IThemeCubit>(() => ThemeCubit());
   }
 
   void dependencyUseCase(){
@@ -66,6 +70,8 @@ class AppBinding extends Bindings{
 
   void dependencyService(){
     Get.lazyPut<IWifiService>(() => WifiService());
+    Get.lazyPut<ILoggerService>(() => LoggerService());
+    Get.lazyPut<ICrashlyticsService>(() => CrashlyticsService());
   }
 
 }

@@ -6,15 +6,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../../../app/ui/widgets/dialog/dialog.dart';
-import '../../../interface/bloc/application.dart';
+import '../../../core/constants/application_loading.dart';
+import '../../../interface/bloc/application/application_cubit.dart';
 import '../../../interface/service/crashlytics.dart';
 import '../../../interface/service/wifi.dart';
+import '../../feature/widgets/dialog/app_dialog.dart';
 
 part 'application_state.dart';
 part 'application_action_helper.dart';
 
-class ApplicationCubit extends Cubit<ApplicationState> implements IApplicationBloc{
+class ApplicationCubit extends Cubit<IApplicationState> implements IApplicationCubit{
   ApplicationCubit() : super(const ApplicationState()){
     Get.find<IWifiService>().onListener(onWifiStatus);
     Get.find<ICrashlyticsService>().onApplicationCrash();

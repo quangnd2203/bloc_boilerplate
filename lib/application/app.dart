@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
 import 'package:get/get.dart' as getx;
+import '../core/constants/app_colors.dart';
+import '../core/constants/app_locale.dart';
 import '../core/constants/app_values.dart';
-import '../core/di/app_binding.dart';
+import '../interface/bloc/language/language_cubit.dart';
+import '../interface/bloc/theme/theme_cubit.dart';
 import '../interface/service/logger.dart';
-import 'bloc/language/language_cubit.dart';
-import 'bloc/theme/theme_cubit.dart';
+import 'feature/widgets/loading_full_screen.dart';
 import 'route/app_pages.dart';
-import '../app/ui/widgets/loading_full_screen.dart';
 import 'translations/app_translations.dart';
 
 class App extends StatefulWidget {
@@ -50,27 +51,26 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
       },
       child: bloc.MultiBlocListener(
         listeners: <bloc.BlocListener>[
-          bloc.BlocListener<LanguageCubit, AppLocale>(
-            bloc: getx.Get.find<LanguageCubit>(),
+          bloc.BlocListener<ILanguageCubit, AppLocale>(
+            bloc: getx.Get.find<ILanguageCubit>(),
             listener: (BuildContext context, AppLocale state) {
               getx.Get.updateLocale(state.value);
             },
           ),
         ],
-        child: bloc.BlocBuilder<ThemeCubit, ThemeState>(
-          bloc: getx.Get.find<ThemeCubit>(),
-          builder: (BuildContext context, ThemeState state) {
+        child: bloc.BlocBuilder<IThemeCubit, IThemeState>(
+          bloc: getx.Get.find<IThemeCubit>(),
+          builder: (BuildContext context, IThemeState state) {
             return getx.GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: (state.mode == ThemeMode.light ? state.lightTheme : state.darkTheme).copyWith(
-                scaffoldBackgroundColor: AppColors.getWhiteAndBlack,
+                scaffoldBackgroundColor: state.mode == ThemeMode.light ? AppColors.themeLightBackgroundColor : AppColors.themeDarkBackgroundColor,
               ),
-              initialBinding: AppBinding(),
               title: APP_NAME,
               initialRoute: Routes.SPLASH,
               defaultTransition: getx.Transition.cupertino,
               getPages: AppPages.pages,
-              locale: getx.Get.find<LanguageCubit>().state.value,
+              locale: getx.Get.find<ILanguageCubit>().state.value,
               translationsKeys: AppTranslation.translations,
               builder: (BuildContext context, Widget? child) {
                 return LoadingFullScreen(child: child!);
