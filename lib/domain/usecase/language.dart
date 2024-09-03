@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
+import '../../core/constants/app_locale.dart';
 import '../../core/constants/app_pref.dart';
-import '../../core/constants/app_values.dart';
 import '../../interface/repository/local_storage.dart';
 import '../../interface/usecase/language.dart';
 

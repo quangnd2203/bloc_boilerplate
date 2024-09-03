@@ -2,7 +2,7 @@
 
 import 'package:get/get.dart';
 
-import '../../app/ui/splash/splash.dart';
+import '../feature/splash/splash.dart';
 part 'app_routes.dart';
 
 class AppPages {

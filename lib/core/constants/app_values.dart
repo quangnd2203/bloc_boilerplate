@@ -14,15 +14,6 @@ const String APP_NAME = 'ViVi';
 /// FLAVOR = prod => product
 late final String flavor;
 
-enum AppLocale {
-  vi(Locale('vi', 'VN')),
-  en(Locale('en', 'US'));
-
-  const AppLocale(this._locale);
-  final Locale _locale;
-  Locale get value => _locale;
-}
-
 const int DASH_BOARD_ID = 0;
 
 const double DASHBOARD_NAVIGATION_HEIGHT = 90;

@@ -32,6 +32,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()
@@ -68,7 +69,7 @@ if (keystorePropertiesFile.exists()) {
 android {
 
     flavorDimensions "flavor-type"
-    def _applicationId = "com.quangnd.bloc_boilerplate"
+    def _applicationId = "com.boilerplate"
     def _appName = "Bloc Boilerplate"
 
     productFlavors {
