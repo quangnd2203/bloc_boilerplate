@@ -14,7 +14,7 @@ import Firebase
 //           GeneratedPluginRegistrant.register(with: registry)
 //       }
       if #available(iOS 10.0, *) {
-        UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
       }
       let controller = window.rootViewController as! FlutterViewController
       let flavorChannel = FlutterMethodChannel(
