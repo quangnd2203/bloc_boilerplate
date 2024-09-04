@@ -7,6 +7,7 @@ import '../../application/bloc/application/application_cubit.dart';
 import '../../application/bloc/language/language_cubit.dart';
 import '../../application/bloc/theme/theme_cubit.dart';
 import '../../domain/usecase/language.dart';
+import '../../domain/usecase/notification.dart';
 import '../../domain/usecase/theme_mode.dart';
 import '../../domain/usecase/user.dart';
 import '../../infrastructure/client/native_client.dart';
@@ -15,6 +16,7 @@ import '../../infrastructure/repository/user.dart';
 import '../../interface/bloc/application/application_cubit.dart';
 import '../../interface/bloc/language/language_cubit.dart';
 import '../../interface/service/crashlytics.dart';
+import '../../interface/service/firebase_message.dart';
 import '../../interface/service/logger.dart';
 import '../../interface/service/wifi.dart';
 import '../../interface/bloc/theme/theme_cubit.dart';
@@ -22,10 +24,12 @@ import '../../interface/client/client.dart';
 import '../../interface/repository/local_storage.dart';
 import '../../interface/repository/user.dart';
 import '../../interface/usecase/language.dart';
+import '../../interface/usecase/notification.dart';
 import '../../interface/usecase/theme_mode.dart';
 import '../../interface/usecase/user.dart';
 import '../constants/app_values.dart';
 import '../service/crashlytics.dart';
+import '../service/firebase_message.dart';
 import '../service/logger.dart';
 import '../service/wifi.dart';
 
@@ -61,6 +65,7 @@ class AppBinding extends Bindings{
     Get.lazyPut<IUserUseCase>(() => UserUseCase());
     Get.lazyPut<ILanguageUseCase>(() => LanguageUseCase());
     Get.lazyPut<IThemeModeUseCase>(() => ThemeModeUseCase());
+    Get.lazyPut<INotificationUseCase>(() => NotificationUseCase());
   }
 
   void dependencyRepository(){
@@ -72,6 +77,7 @@ class AppBinding extends Bindings{
     Get.lazyPut<IWifiService>(() => WifiService());
     Get.lazyPut<ILoggerService>(() => LoggerService());
     Get.lazyPut<ICrashlyticsService>(() => CrashlyticsService());
+    Get.lazyPut<IFirebaseMessageService>(() => FirebaseMessageService());
   }
 
 }
