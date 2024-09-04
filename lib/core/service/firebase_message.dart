@@ -11,8 +11,18 @@ class FirebaseMessageService implements IFirebaseMessageService{
   }
 
   @override
+  Future<String?> getApnsToken() async {
+    return _firebaseMessaging.getAPNSToken();
+  }
+
+  @override
   Future<void> requestPermission() async {
     await _firebaseMessaging.requestPermission();
+  }
+
+  @override
+  Future<void> setAutoInitEnabled(bool enabled) async {
+    await _firebaseMessaging.setAutoInitEnabled(enabled);
   }
 
   @override
@@ -23,6 +33,11 @@ class FirebaseMessageService implements IFirebaseMessageService{
   @override
   void unsubscribeFromTopic(String topic) {
     _firebaseMessaging.unsubscribeFromTopic(topic);
+  }
+
+  @override
+  void onTokenRefresh(Future<void> Function(String token) callback) {
+    _firebaseMessaging.onTokenRefresh.listen(callback);
   }
 
   @override

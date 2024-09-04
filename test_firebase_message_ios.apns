@@ -1,0 +1,13 @@
+{
+    "Simulator Target Bundle": "com.boilerplate.staging",
+    "aps": {
+        "alert": "Hello World",
+        "badge": 1,
+        "sound": "default"
+    },
+    "gcm.message_id": "0111111",
+    "payload":{
+        "key1":"value1",
+        "key2":"value2"
+    }
+}
