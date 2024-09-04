@@ -29,6 +29,9 @@ class _AppState extends State<App> with WidgetsBindingObserver implements bloc.B
     super.initState();
     bloc.Bloc.observer = this;
     WidgetsBinding.instance.addObserver(this);
+    Future.delayed(const Duration(seconds: 3), () {
+      throw Exception('Test error');
+    });
   }
 
   @override
