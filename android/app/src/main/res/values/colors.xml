@@ -1,0 +1,4 @@
+<resources>
+    <!-- Định nghĩa màu đỏ cho thông báo -->
+    <color name="colorAccent">#FFA000</color>
+</resources>
