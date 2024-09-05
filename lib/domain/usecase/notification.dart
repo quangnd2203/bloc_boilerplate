@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
 import '../../interface/service/firebase_message.dart';
+import '../../interface/service/local_notification.dart';
 import '../../interface/service/logger.dart';
 import '../../interface/usecase/notification.dart';
 
@@ -9,6 +10,7 @@ class NotificationUseCase implements INotificationUseCase{
 
   final IFirebaseMessageService firebaseMessageService = Get.find<IFirebaseMessageService>();
   final ILoggerService loggerService = Get.find<ILoggerService>();
+  final ILocalNotificationService localNotificationService = Get.find<ILocalNotificationService>();
 
   @override
   Future<String?> getFcmToken() {
@@ -22,6 +24,7 @@ class NotificationUseCase implements INotificationUseCase{
     firebaseMessageService.getFcmToken().then((value){
       loggerService.debug('FCM Token: $value');
     });
+    await localNotificationService.initialize();
     onForegroundMessage();
   }
 
@@ -29,6 +32,7 @@ class NotificationUseCase implements INotificationUseCase{
   void onForegroundMessage() {
     firebaseMessageService.onForegroundMessage((RemoteMessage message) async {
       loggerService.debug('onForegroundMessage: ${message.data}');
+      localNotificationService.showNotification(title: message.notification?.title ?? '', body: message.notification?.body ?? '', payload: message.data.toString());
     });
   }
 

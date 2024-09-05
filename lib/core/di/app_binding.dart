@@ -17,6 +17,7 @@ import '../../interface/bloc/application/application_cubit.dart';
 import '../../interface/bloc/language/language_cubit.dart';
 import '../../interface/service/crashlytics.dart';
 import '../../interface/service/firebase_message.dart';
+import '../../interface/service/local_notification.dart';
 import '../../interface/service/logger.dart';
 import '../../interface/service/wifi.dart';
 import '../../interface/bloc/theme/theme_cubit.dart';
@@ -30,6 +31,7 @@ import '../../interface/usecase/user.dart';
 import '../constants/app_values.dart';
 import '../service/crashlytics.dart';
 import '../service/firebase_message.dart';
+import '../service/local_notification.dart';
 import '../service/logger.dart';
 import '../service/wifi.dart';
 
@@ -78,6 +80,7 @@ class AppBinding extends Bindings{
     Get.lazyPut<ILoggerService>(() => LoggerService());
     Get.lazyPut<ICrashlyticsService>(() => CrashlyticsService());
     Get.lazyPut<IFirebaseMessageService>(() => FirebaseMessageService());
+    Get.lazyPut<ILocalNotificationService>(() => LocalNotificationService());
   }
 
 }
