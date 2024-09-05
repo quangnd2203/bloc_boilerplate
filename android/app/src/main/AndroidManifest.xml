@@ -105,10 +105,10 @@
         <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
       </intent-filter>
     </receiver>
-<!--    &lt;!&ndash; Đặt biểu tượng tùy chỉnh cho thông báo &ndash;&gt;-->
-<!--    <meta-data-->
-<!--        android:name="com.google.firebase.messaging.default_notification_icon"-->
-<!--        android:resource="@drawable/ic_launcher" />-->
+    <!-- Đặt biểu tượng tùy chỉnh cho thông báo -->
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/ic_stat_file" />
 
 <!--    &lt;!&ndash; Đặt màu mặc định cho biểu tượng thông báo &ndash;&gt;-->
 <!--    <meta-data-->
