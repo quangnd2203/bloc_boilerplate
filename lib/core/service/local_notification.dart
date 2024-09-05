@@ -8,7 +8,7 @@ class LocalNotificationService implements ILocalNotificationService{
 
   @override
   Future<void> initialize() async {
-    const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
+    const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@drawable/ic_stat_file');
     final DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings(
       onDidReceiveLocalNotification: (int id, String? title, String? body, String? payload) async {
         flutterLocalNotificationsPlugin.cancel(id);
