@@ -1,4 +1,4 @@
-package com.quangnd.bloc_boilerplate
+package com.boilerplate
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine

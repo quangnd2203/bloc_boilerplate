@@ -50,6 +50,8 @@
 	<array>
 		<string>$(APP_LINK)/request_invite</string>
 	</array>
+	<key>FirebaseMessagingAutoInitEnabled</key>
+	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationCategoryType</key>
