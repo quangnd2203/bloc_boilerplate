@@ -1,4 +1,4 @@
-package com.quangnd.bloc_boilerplate
+package com.boilerplate
 import io.flutter.app.FlutterApplication
 //Enable this line if use zalo login
 //import com.zing.zalo.zalosdk.oauth.ZaloSDKApplication

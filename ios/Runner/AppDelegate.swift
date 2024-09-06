@@ -1,20 +1,20 @@
 import UIKit
 import Flutter
-// import flutter_local_notifications
+import flutter_local_notifications
 import Firebase
 
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
       FirebaseApp.configure();
-//       FlutterLocalNotificationsPlugin.setPluginRegistrantCallback { (registry) in
-//           GeneratedPluginRegistrant.register(with: registry)
-//       }
+       FlutterLocalNotificationsPlugin.setPluginRegistrantCallback { (registry) in
+           GeneratedPluginRegistrant.register(with: registry)
+       }
       if #available(iOS 10.0, *) {
-        UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
       }
       let controller = window.rootViewController as! FlutterViewController
       let flavorChannel = FlutterMethodChannel(

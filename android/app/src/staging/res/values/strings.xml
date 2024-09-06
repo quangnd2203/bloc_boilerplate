@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Replace "000000000000" with your Facebook App ID here. -->
+    <string name="facebook_app_id">1461416037650463</string>
+
+    <!--
+      Replace "000000000000" with your Facebook App ID here.
+      **NOTE**: The scheme needs to start with `fb` and then your ID.
+    -->
+    <string name="fb_login_protocol_scheme">f1461416037650463</string>
+
+    <!--YOUR FACEBOOK CLIENT TOKEN-->
+    <string name="fb_login_client_token">ee165a45f307a018844d2edbc49cb3e1</string>
+
+    <!--DEEP LINK HOST-->
+    <string name="host"></string>
+</resources>
