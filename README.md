@@ -15,7 +15,7 @@
 ### By Android studio run:
 - Run cmd: flutter pub get
 - In "run/debug configurations"
-- In line "Addition run args" type "flutter run --flavor [FLAVOR]"
+- In line "Addition run args" type "--flavor [FLAVOR]"
 - Done!
 
 ## How to build ?
