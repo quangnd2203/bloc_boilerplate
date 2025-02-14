@@ -53,6 +53,9 @@
 }
 -keep class com.dexterous.** { *; }
 
+-keep class com.google.android.play.core.splitcompat.** { *; }
+-keep class io.flutter.app.FlutterPlayStoreSplitApplication { *; }
+
 ### BackendLess
 #-dontwarn com.backendless.**
 #-dontwarn weborb.**
