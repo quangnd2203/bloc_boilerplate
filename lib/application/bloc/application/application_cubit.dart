@@ -1,5 +1,4 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,8 +8,8 @@ import 'package:flutter_app/shared/constants/application_loading.dart';
 import 'package:flutter_app/domain/interface/service/crashlytics.dart';
 import 'package:flutter_app/domain/interface/service/wifi.dart';
 import 'package:flutter_app/presentation/feature/widgets/dialog/app_dialog.dart';
-import 'package:flutter_app/application/usecase/notification.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_app/application/usecase/notification/notification_initialize_usecase.dart';
 
 part 'application_state.dart';
 part 'application_action_helper.dart';
@@ -19,15 +18,12 @@ class ApplicationCubit extends Cubit<ApplicationState>{
   ApplicationCubit() : super(const ApplicationState()){
     Get.find<IWifiService>().onListener(onWifiStatus);
     Get.find<ICrashlyticsService>().onApplicationCrash();
-    Get.find<NotificationUseCase>()..initialize()..onMessageOpenedApp(_onMessageOpenedApp);
+    _notificationInitializeUseCase.execute();
   }
+
+  final NotificationInitializeUseCase _notificationInitializeUseCase = Get.find<NotificationInitializeUseCase>();
 
   final _ApplicationActionHelper helper = _ApplicationActionHelper();
-
-
-  Future<void> _onMessageOpenedApp(RemoteMessage message) async {
-    // Push another page onto the navigator when received a message
-  }
 
   void setLoading([bool loading = true]) {
     if (loading) {

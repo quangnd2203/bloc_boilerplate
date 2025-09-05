@@ -26,6 +26,19 @@ import 'package:flutter_app/domain/interface/service/crashlytics.dart';
 import 'package:flutter_app/domain/interface/service/firebase_message.dart';
 import 'package:flutter_app/domain/interface/service/local_notification.dart';
 
+// Use Case imports
+import 'package:flutter_app/application/usecase/language/language_get_usecase.dart';
+import 'package:flutter_app/application/usecase/language/language_update_usecase.dart';
+import 'package:flutter_app/application/usecase/theme_mode/theme_mode_get_usecase.dart';
+import 'package:flutter_app/application/usecase/theme_mode/theme_mode_update_usecase.dart';
+import 'package:flutter_app/application/usecase/user/user_get_usecase.dart';
+import 'package:flutter_app/application/usecase/user/user_get_all_usecase.dart';
+import 'package:flutter_app/application/usecase/notification/notification_initialize_usecase.dart';
+import 'package:flutter_app/application/usecase/notification/notification_get_fcm_token_usecase.dart';
+import 'package:flutter_app/application/usecase/notification/notification_subscribe_topic_usecase.dart';
+import 'package:flutter_app/application/usecase/notification/notification_unsubscribe_topic_usecase.dart';
+
+
 // Constants
 import 'package:flutter_app/shared/constants/app_values.dart';
 
@@ -34,6 +47,7 @@ class Injection {
     _dependencyBloc();
     _dependencyRepository();
     _dependencyService();
+    _dependencyUseCase();
   }
 
   static void _dependencyBloc() {
@@ -62,5 +76,25 @@ class Injection {
     Get.lazyPut<ICrashlyticsService>(() => CrashlyticsService());
     Get.lazyPut<IFirebaseMessageService>(() => FirebaseMessageService());
     Get.lazyPut<ILocalNotificationService>(() => LocalNotificationService());
+  }
+
+  static void _dependencyUseCase() {
+    // Language Use Cases
+    Get.lazyPut<LanguageGetUseCase>(() => LanguageGetUseCase());
+    Get.lazyPut<LanguageUpdateUseCase>(() => LanguageUpdateUseCase());
+    
+    // Theme Mode Use Cases
+    Get.lazyPut<ThemeModeGetUseCase>(() => ThemeModeGetUseCase());
+    Get.lazyPut<ThemeModeUpdateUseCase>(() => ThemeModeUpdateUseCase());
+    
+    // User Use Cases
+    Get.lazyPut<UserGetUseCase>(() => UserGetUseCase());
+    Get.lazyPut<UserGetAllUseCase>(() => UserGetAllUseCase());
+    
+    // Notification Use Cases
+    Get.lazyPut<NotificationInitializeUseCase>(() => NotificationInitializeUseCase());
+    Get.lazyPut<NotificationGetFcmTokenUseCase>(() => NotificationGetFcmTokenUseCase());
+    Get.lazyPut<NotificationSubscribeTopicUseCase>(() => NotificationSubscribeTopicUseCase());
+    Get.lazyPut<NotificationUnsubscribeTopicUseCase>(() => NotificationUnsubscribeTopicUseCase());
   }
 }

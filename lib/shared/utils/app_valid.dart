@@ -36,10 +36,11 @@ class AppValid {
     if(value?.isNotEmpty ?? false){
       final RegExp regex = RegExp(
           r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
-      if (!regex.hasMatch(value!))
+      if (!regex.hasMatch(value!)) {
         return 'please_provide_valid_email'.tr;
-      else
+      } else {
         return null;
+      }
     }
     return null;
   }

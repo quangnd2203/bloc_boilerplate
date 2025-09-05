@@ -20,5 +20,6 @@ class ApplicationState extends Equatable{
     );
   }
   
+  @override
   List<Object?> get props => <Object?>[loading, connectivityResult];
 }

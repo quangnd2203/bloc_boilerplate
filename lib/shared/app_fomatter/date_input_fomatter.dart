@@ -74,9 +74,6 @@ class DateInputFormatter extends TextInputFormatter {
     if (cs1 == cs2) {
       return INDEX_NOT_FOUND;
     }
-    if (cs1 == null || cs2 == null) {
-      return 0;
-    }
     int i;
     for (i = 0; i < cs1.length && i < cs2.length; ++i) {
       if (cs1[i] != cs2[i]) {
@@ -90,7 +87,7 @@ class DateInputFormatter extends TextInputFormatter {
   }
 
   String _fillInputToPlaceholder(String input) {
-    if (input == null || input.isEmpty) {
+    if (input.isEmpty) {
       return _placeholder;
     }
     String result = _placeholder;
