@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Specify analysis options.
 #
 # For a list of lints, see: http://dart-lang.github.io/linter/lints/
@@ -241,3 +242,26 @@ linter:
     # - use_to_and_as_if_applicable # has false positives, so we prefer to catch this by code-review
     - valid_regexps
     - void_checks
+=======
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+  errors:
+    library_private_types_in_public_api: ignore
+    use_build_context_synchronously: ignore
+    omit_local_variable_types: ignore
+    always_specify_types: warning
+    avoid_types_on_closure_parameters: ignore
+    always_use_package_imports: error
+    constant_identifier_names: ignore
+
+linter:
+  rules:
+    - always_specify_types
+    - always_use_package_imports
+    - constant_identifier_names
+>>>>>>> migration

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +11,18 @@ import '../../../interface/usecase/theme_mode.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<IThemeState> implements IThemeCubit{
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter_app/shared/constants/app_themes.dart';
+import 'package:flutter_app/application/usecase/theme_mode.dart';
+
+part 'theme_state.dart';
+
+class ThemeCubit extends Cubit<ThemeState>{
+>>>>>>> migration
   ThemeCubit() : super(ThemeState(
     mode: ThemeMode.light,
     lightTheme: AppThemes.light,
@@ -22,9 +35,14 @@ class ThemeCubit extends Cubit<IThemeState> implements IThemeCubit{
     });
   }
 
+<<<<<<< HEAD
   final IThemeModeUseCase themeModeUseCase = Get.find<IThemeModeUseCase>();
 
   @override
+=======
+  final ThemeModeUseCase themeModeUseCase = Get.find<ThemeModeUseCase>();
+
+>>>>>>> migration
   void changeThemeMode(ThemeMode mode) {
     emit(state.copyWith(mode: mode));
     themeModeUseCase.update(mode);

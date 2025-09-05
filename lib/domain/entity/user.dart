@@ -10,4 +10,8 @@ class UserEntity{
       name: name ?? this.name,
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> migration

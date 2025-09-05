@@ -1,0 +1,4 @@
+enum ApplicationLoading {
+  loading,
+  completed,
+}

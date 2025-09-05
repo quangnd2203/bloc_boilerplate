@@ -1,5 +1,6 @@
 part of 'application_cubit.dart';
 
+<<<<<<< HEAD
 class ApplicationState extends IApplicationState{
 
   const ApplicationState({
@@ -8,6 +9,18 @@ class ApplicationState extends IApplicationState{
   });
 
   @override
+=======
+class ApplicationState extends Equatable{
+
+  final ApplicationLoading loading;
+  final ConnectivityResult connectivityResult;
+
+  const ApplicationState({
+    this.loading = ApplicationLoading.completed,
+    this.connectivityResult = ConnectivityResult.wifi,
+  });
+
+>>>>>>> migration
   ApplicationState copyWith({
     ApplicationLoading? loading,
     ConnectivityResult? connectivityResult
@@ -17,4 +30,9 @@ class ApplicationState extends IApplicationState{
       connectivityResult: connectivityResult ?? this.connectivityResult,
     );
   }
+<<<<<<< HEAD
+=======
+  
+  List<Object?> get props => <Object?>[loading, connectivityResult];
+>>>>>>> migration
 }

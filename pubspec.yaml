@@ -9,7 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> migration
   # Notification
   flutter_local_notifications: ^17.2.2
   firebase_messaging: ^15.1.0
