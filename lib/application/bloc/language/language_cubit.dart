@@ -1,11 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_locale.dart';
-import '../../../interface/bloc/language/language_cubit.dart';
-import '../../../interface/usecase/language.dart';
+import 'package:flutter_app/shared/constants/app_locale.dart';
+import 'package:flutter_app/application/usecase/language.dart';
 
-class LanguageCubit extends Cubit<AppLocale> implements ILanguageCubit {
+class LanguageCubit extends Cubit<AppLocale>{
   LanguageCubit() : super(AppLocale.en) {
     languageUseCase.get().then((AppLocale? value) {
       if (value != null) {
@@ -14,9 +13,8 @@ class LanguageCubit extends Cubit<AppLocale> implements ILanguageCubit {
     });
   }
 
-  final ILanguageUseCase languageUseCase = Get.find<ILanguageUseCase>();
+  final LanguageUseCase languageUseCase = Get.find<LanguageUseCase>();
 
-  @override
   void changeLanguage(AppLocale locale) {
     if (state != locale) {
       emit(locale);
