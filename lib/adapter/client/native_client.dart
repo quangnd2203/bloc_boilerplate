@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get/get.dart' as getx;
 
-import 'package:flutter_app/domain/interface/client/client.dart';
-import 'package:flutter_app/domain/interface/repository/local_storage.dart';
-import 'package:flutter_app/domain/interface/service/logger.dart';
+import 'package:flutter_app/domain/interface/client/i_client.dart';
+import 'package:flutter_app/domain/interface/repository/i_local_storage_repository.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
 import 'package:flutter_app/shared/constants/app_endpoint.dart';
 import 'package:flutter_app/shared/constants/app_pref.dart';
 

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:get/get.dart';
-import 'package:flutter_app/domain/interface/service/logger.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
 
 class DeviceInfo {
   DeviceInfo({this.id, this.version, this.model, this.isPhysicalDevice, this.os});

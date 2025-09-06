@@ -1,4 +1,4 @@
-import 'package:flutter_app/domain/interface/repository/local_storage.dart';
+import 'package:flutter_app/domain/interface/repository/i_local_storage_repository.dart';
 import 'package:get_storage/get_storage.dart';
 
 class LocalStorageRepository implements ILocalStorageRepository{

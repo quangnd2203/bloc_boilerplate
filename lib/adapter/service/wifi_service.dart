@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-import 'package:flutter_app/domain/interface/service/wifi.dart';
+import 'package:flutter_app/domain/interface/service/i_wifi_service.dart';
 
 class WifiService implements IWifiService {
   final Connectivity connectivity = Connectivity();

@@ -8,23 +8,23 @@ import 'package:flutter_app/application/bloc/theme/theme_cubit.dart';
 
 // Repository imports
 import 'package:flutter_app/adapter/client/native_client.dart';
-import 'package:flutter_app/adapter/repository/user.dart';
-import 'package:flutter_app/adapter/repository/local_storage.dart';
-import 'package:flutter_app/domain/interface/client/client.dart';
-import 'package:flutter_app/domain/interface/repository/user.dart';
-import 'package:flutter_app/domain/interface/repository/local_storage.dart';
+import 'package:flutter_app/adapter/repository/user_repository.dart';
+import 'package:flutter_app/adapter/repository/local_storage_repository.dart';
+import 'package:flutter_app/domain/interface/client/i_client.dart';
+import 'package:flutter_app/domain/interface/repository/i_user_repository.dart';
+import 'package:flutter_app/domain/interface/repository/i_local_storage_repository.dart';
 
 // Service imports
-import 'package:flutter_app/adapter/service/wifi.dart';
-import 'package:flutter_app/adapter/service/logger.dart';
-import 'package:flutter_app/adapter/service/crashlytics.dart';
-import 'package:flutter_app/adapter/service/firebase_message.dart';
-import 'package:flutter_app/adapter/service/local_notification.dart';
-import 'package:flutter_app/domain/interface/service/wifi.dart';
-import 'package:flutter_app/domain/interface/service/logger.dart';
-import 'package:flutter_app/domain/interface/service/crashlytics.dart';
-import 'package:flutter_app/domain/interface/service/firebase_message.dart';
-import 'package:flutter_app/domain/interface/service/local_notification.dart';
+import 'package:flutter_app/adapter/service/wifi_service.dart';
+import 'package:flutter_app/adapter/service/logger_service.dart';
+import 'package:flutter_app/adapter/service/crashlytics_service.dart';
+import 'package:flutter_app/adapter/service/firebase_message_service.dart';
+import 'package:flutter_app/adapter/service/local_notification_service.dart';
+import 'package:flutter_app/domain/interface/service/i_wifi_service.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
+import 'package:flutter_app/domain/interface/service/i_crashlytics_service.dart';
+import 'package:flutter_app/domain/interface/service/i_firebase_message_service.dart';
+import 'package:flutter_app/domain/interface/service/i_local_notification_service.dart';
 
 // Use Case imports
 import 'package:flutter_app/application/usecase/language/language_get_usecase.dart';

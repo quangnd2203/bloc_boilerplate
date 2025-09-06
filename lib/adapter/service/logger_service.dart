@@ -1,6 +1,6 @@
 import 'package:logger/logger.dart';
 
-import 'package:flutter_app/domain/interface/service/logger.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
 
 class LoggerService implements ILoggerService{
   final Logger _logger = Logger();

@@ -1,6 +1,6 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_app/domain/interface/service/crashlytics.dart';
+import 'package:flutter_app/domain/interface/service/i_crashlytics_service.dart';
 
 class CrashlyticsService implements ICrashlyticsService {
   @override

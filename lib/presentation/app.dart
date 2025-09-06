@@ -8,7 +8,7 @@ import 'package:flutter_app/shared/constants/app_locale.dart';
 import 'package:flutter_app/shared/constants/app_values.dart';
 import 'package:flutter_app/application/bloc/language/language_cubit.dart';
 import 'package:flutter_app/application/bloc/theme/theme_cubit.dart';
-import 'package:flutter_app/domain/interface/service/logger.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
 import 'package:flutter_app/presentation/feature/widgets/loading_full_screen.dart';
 import 'package:flutter_app/presentation/route/app_pages.dart';
 import 'package:flutter_app/presentation/translations/app_translations.dart';

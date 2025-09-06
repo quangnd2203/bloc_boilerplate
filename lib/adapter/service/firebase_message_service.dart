@@ -1,5 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_app/domain/interface/service/firebase_message.dart';
+import 'package:flutter_app/domain/interface/service/i_firebase_message_service.dart';
 
 class FirebaseMessageService implements IFirebaseMessageService{
 

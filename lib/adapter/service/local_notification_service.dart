@@ -1,6 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-import 'package:flutter_app/domain/interface/service/local_notification.dart';
+import 'package:flutter_app/domain/interface/service/i_local_notification_service.dart';
 
 class LocalNotificationService implements ILocalNotificationService{
 

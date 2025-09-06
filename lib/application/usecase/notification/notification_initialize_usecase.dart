@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-import 'package:flutter_app/domain/interface/service/firebase_message.dart';
-import 'package:flutter_app/domain/interface/service/local_notification.dart';
-import 'package:flutter_app/domain/interface/service/logger.dart';
+import 'package:flutter_app/domain/interface/service/i_firebase_message_service.dart';
+import 'package:flutter_app/domain/interface/service/i_local_notification_service.dart';
+import 'package:flutter_app/domain/interface/service/i_logger_service.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 class NotificationInitializeUseCase {

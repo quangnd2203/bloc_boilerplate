@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as getx;
 
-import 'package:flutter_app/domain/interface/client/client.dart';
-import 'package:flutter_app/domain/interface/repository/user.dart';
+import 'package:flutter_app/domain/interface/client/i_client.dart';
+import 'package:flutter_app/domain/interface/repository/i_user_repository.dart';
 import 'package:flutter_app/shared/constants/app_endpoint.dart';
 import 'package:flutter_app/adapter/model/network_state.dart';
 import 'package:flutter_app/adapter/model/user.dart';
