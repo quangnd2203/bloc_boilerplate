@@ -56,3 +56,6 @@ ios/**/GoogleService-Info*.plist
 # Android Keystores
 android/*.keystore
 android/key.properties
+
+#Flutter Test
+**/test/**/*.mocks.dart
